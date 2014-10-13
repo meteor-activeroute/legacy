@@ -27,7 +27,7 @@ isActive = (type, inverse = false) ->
 
     test = testExp route, regex, isPath
 
-    test = not test if invese
+    test = not test if inverse
 
     if test then className else false
 
