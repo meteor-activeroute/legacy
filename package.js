@@ -11,10 +11,14 @@ Package.onUse(function(api) {
   api.use([
     'check',
     'coffeescript',
-    'templating'
+    'templating',
+    'underscore'
   ]);
 
-  api.use('iron:router@1.0.0-pre4');
+  api.use([
+    'iron:router@1.0.0-pre4',
+    'wizonesolutions:underscore-string@1.0.0'
+  ]);
 
   api.addFiles('client/helpers.coffee', 'client');
 });
