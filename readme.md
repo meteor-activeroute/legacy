@@ -1,4 +1,4 @@
-# Active route/path template helpers for Iron.Router
+# Active route/path template helpers for [Iron.Router](https://github.com/eventedmind/iron-router)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/zimme/meteor-iron-router-active?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 I used [iron-router-active](https://github.com/XpressiveCode/iron-router-active)
