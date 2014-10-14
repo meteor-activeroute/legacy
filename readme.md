@@ -8,10 +8,10 @@ intended :P Also made a small functional change and also an API rewrite.
 ```html
 <nav>
   <ul>
-    <li class="{{ isActiveRoute regex='dashboard' }}">...</li>
-    <li class="{{ isActiveRoute regex='dashboard|index' }}">...</li>
-    <li class="{{ isActiveRoute regex='users' className='on' }}">...</li>
-    <li class="{{ isActivePath regex='products' }}">...</li>
+    <li class="{{isActiveRoute regex='dashboard'}}">...</li>
+    <li class="{{isActiveRoute regex='dashboard|index'}}">...</li>
+    <li class="{{isActiveRoute regex='users' className='on'}}">...</li>
+    <li class="{{isActivePath regex='products'}}">...</li>
     {{#if isActiveRoute regex='index'}}
       <li>...</li>
     {{/if}}
