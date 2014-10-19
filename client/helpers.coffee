@@ -1,7 +1,7 @@
 isActive = (type, inverse = false) ->
   name = 'is'
   name = name + 'Not' if inverse
-  name = name + _.capitalize type
+  name = name + 'Active' + _.capitalize type
 
   (view) ->
     unless view instanceof Spacebars.kw
