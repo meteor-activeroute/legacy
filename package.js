@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   ]);
 
   api.use([
-    'iron:router@1.0.0-pre4',
+    'iron:router@0.9.4',
     'wizonesolutions:underscore-string@1.0.0'
   ]);
 
