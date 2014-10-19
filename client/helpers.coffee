@@ -36,7 +36,7 @@ testExp = (route, exp, isPath = false) ->
     pattern = route.path()
 
   else
-    pattern = route.getName()
+    pattern = route.name
 
   re = new RegExp exp, 'i'
 
