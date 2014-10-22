@@ -15,9 +15,9 @@ isActive = (type, inverse = false) ->
 
     check view.hash, pattern
 
-    route = Router.current().route
+    controller = Router.current()
 
-    return false unless route
+    return false unless controller
 
     {className, regex} = view.hash
 
@@ -25,18 +25,18 @@ isActive = (type, inverse = false) ->
 
     isPath = true if type is 'path'
 
-    test = testExp route, regex, isPath
+    test = testExp controller, regex, isPath
 
     test = not test if inverse
 
     if test then className else false
 
-testExp = (route, exp, isPath = false) ->
+testExp = (controller, exp, isPath = false) ->
   if isPath
-    pattern = route.path()
+    pattern = controller.path
 
   else
-    pattern = route.name
+    pattern = controller.route.name
 
   re = new RegExp exp, 'i'
 
