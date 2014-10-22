@@ -2,7 +2,7 @@ Package.describe({
   git: 'https://github.com/zimme/meteor-iron-router-active.git',
   name: 'zimme:iron-router-active',
   summary: 'Active route/path template helpers for iron:router',
-  version: '0.3.0'
+  version: '0.3.1'
 });
 
 Package.onUse(function(api) {
