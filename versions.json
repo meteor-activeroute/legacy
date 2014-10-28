@@ -70,35 +70,35 @@
     ],
     [
       "iron:controller",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "iron:core",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "iron:dynamic-template",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "iron:layout",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "iron:location",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "iron:middleware-stack",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "iron:router",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "iron:url",
-      "1.0.0-pre4"
+      "1.0.0-rc.1"
     ],
     [
       "jquery",
