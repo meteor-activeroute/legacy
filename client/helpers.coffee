@@ -33,10 +33,10 @@ isActive = (type, inverse = false) ->
 
 testExp = (controller, exp, isPath = false) ->
   if isPath
-    pattern = controller.path
+    pattern = controller.location.get().path
 
   else
-    pattern = controller.route.name
+    pattern = controller.route.getName()
 
   re = new RegExp exp, 'i'
 

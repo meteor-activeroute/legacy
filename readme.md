@@ -5,6 +5,14 @@ I used [iron-router-active](https://github.com/XpressiveCode/iron-router-active)
 as inspiration and did a coffeescript rewrite as it wasn't very active, pun
 intended :P Also made a small functional change and also an API rewrite.
 
+`isActiveRoute` and `isActivePath` returns the string `active` or boolean
+`false` unless you specify `className` then this string is returned instead of
+`active`.
+
+`isNotActiveRoute` and `isNotActivePath` returns the string `disabled` or
+boolean `false` unless you specify `className` then this string is returned
+instead of `disabled`.
+
 ### Usage
 ```html
 <nav>
@@ -16,6 +24,7 @@ intended :P Also made a small functional change and also an API rewrite.
     {{#if isActiveRoute regex='index'}}
       <li>...</li>
     {{/if}}
+    <li class="{{isNotActiveRoute regex='dashboard'}}">...</li>
   </ul>
 </nav>
 ```
