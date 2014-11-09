@@ -36,7 +36,7 @@ testExp = (controller, exp, isPath = false) ->
     pattern = controller.location.get().path
 
   else
-    pattern = controller.route.getName()
+    pattern = controller.route?.getName()
 
   re = new RegExp exp, 'i'
 
