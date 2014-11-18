@@ -1,5 +1,6 @@
 # Active route/path template helpers for [Iron.Router](https://github.com/eventedmind/iron-router)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/zimme/meteor-iron-router-active?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Code Climate](https://img.shields.io/codeclimate/github/zimme/meteor-iron-router-active.svg?style=flat)](https://codeclimate.com/github/zimme/meteor-iron-router-active)
 
 I used [iron-router-active](https://github.com/XpressiveCode/iron-router-active)
 as inspiration and did a coffeescript rewrite as it wasn't very active.
