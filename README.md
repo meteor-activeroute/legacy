@@ -29,3 +29,10 @@ instead of `disabled`.
   </ul>
 </nav>
 ```
+
+This helper uses regex which means strings like this will work too.
+```js
+'^dashboard$' // Exact match for 'dashboard'
+'^product' // Begins with 'product'
+'list$' // Ends with 'list'
+```
