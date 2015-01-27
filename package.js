@@ -17,7 +17,7 @@ Package.onUse(function(api) {
 
   api.use([
     'iron:router@1.0.0',
-    'wizonesolutions:underscore-string@1.0.0'
+    'underscorestring:underscore.string@2.4.0'
   ]);
 
   api.addFiles('client/helpers.coffee', 'client');
