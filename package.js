@@ -17,7 +17,7 @@ Package.onUse(function(api) {
 
   api.use([
     'iron:router@1.0.0',
-    'underscorestring:underscore.string@2.4.0'
+    'underscorestring:underscore.string@3.0.0'
   ]);
 
   api.addFiles('client/helpers.coffee', 'client');
