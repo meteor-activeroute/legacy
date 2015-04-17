@@ -1,8 +1,9 @@
-# Active route/path helpers for [Iron.Router](https://github.com/eventedmind/iron-router)
 [![Gitter](https://img.shields.io/badge/gitter-join_chat-brightgreen.svg)]
 (https://gitter.im/zimme/meteor-iron-router-active)
 [![Code Climate](https://img.shields.io/codeclimate/github/zimme/meteor-iron-router-active.svg)]
 (https://codeclimate.com/github/zimme/meteor-iron-router-active)
+
+# Active route/path helpers for [Iron.Router](https://github.com/eventedmind/iron-router)
 
 I used [iron-router-active](https://github.com/XpressiveCode/iron-router-active)
 as inspiration and did a coffeescript rewrite as it wasn't very active.
