@@ -20,5 +20,9 @@ Package.onUse(function(api) {
     'templating'
   ], ['client', 'server'], {weak: true});
 
+  api.export('ActiveRoute');
+
+  api.addFiles('client/activeroute.coffee');
+
   api.addFiles('client/helpers.coffee', 'client');
 });
