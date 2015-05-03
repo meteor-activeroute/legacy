@@ -1,54 +1,76 @@
+unless Package.templating
+  return
+
+Template = Package.templating.Template
+
 isActive = (type, inverse = false) ->
   name = 'is'
-  name = name + 'Not' if inverse
-  name = name + 'Active' + s.capitalize type
+  name += 'Not' if inverse
+  name += "Active#{type}"
 
-  (view) ->
-    unless view instanceof Spacebars.kw
-      throw new Error "#{name} options must be key value pair such " +
-        "as {{#{name} regex='route/path'}}. You passed: " +
-        "#{JSON.stringify view}"
+  (view = {hash: {}}) ->
+    if Match.test view, String
+      if type is 'Path'
+        hash =
+          path: view
+
+      else
+        hash =
+          route: view
+
+      view = hash: hash
 
     pattern =
       className: Match.Optional String
-      regex: String
+      regex: Match.Optional String
+      route: Match.Optional String
+      path: Match.Optional String
 
     check view.hash, pattern
 
-    controller = Router.current()
+    {className, regex, route, path} = view.hash
 
-    return false unless controller
+    if type is 'Path'
+      route = null
 
-    {className, regex} = view.hash
+    else
+      path = null
+
+    unless regex or route or path
+      t = type.toLowerCase()
+      throw new Error "Invalid argument, #{name} takes \"#{t}\", " +
+        "#{t}=\"#{t}\" or regex=\"regex\""
+
+    if Match.test regex, String
+      if share.config?.caseSensitive is false
+        regex = new RegExp regex, 'i'
+
+      else
+        regex = new RegExp regex
+
+    regex ?= route or path
 
     className ?= if inverse then 'disabled' else 'active'
 
-    isPath = true if type is 'path'
+    isPath = true if type is 'Path'
 
-    test = testExp controller, regex, isPath
+    if isPath
+      result = ActiveRoute.path regex
 
-    test = not test if inverse
+    else
+      result = ActiveRoute.route regex
 
-    if test then className else false
+    result = not result if inverse
 
-testExp = (controller, exp, isPath = false) ->
-  if isPath
-    pattern = controller.location.get().path
-
-  else
-    pattern = controller.route?.getName()
-
-  re = new RegExp exp, 'i'
-
-  re.test pattern
+    if result then className else false
 
 helpers =
-  isActiveRoute: isActive 'route'
+  isActiveRoute: isActive 'Route'
 
-  isActivePath: isActive 'path'
+  isActivePath: isActive 'Path'
 
-  isNotActiveRoute: isActive 'route', true
+  isNotActiveRoute: isActive 'Route', true
 
-  isNotActivePath: isActive 'path', true
+  isNotActivePath: isActive 'Path', true
 
 Template.registerHelper name, func for own name, func of helpers
