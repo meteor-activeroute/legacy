@@ -11,14 +11,14 @@ Package.onUse(function(api) {
   api.use([
     'check',
     'coffeescript',
-    'templating',
     'underscore'
   ]);
 
   api.use([
+    'meteorhacks:flow-router@1.4.0',
     'iron:router@1.0.0',
-    'underscorestring:underscore.string@3.0.0'
-  ]);
+    'templating'
+  ], ['client', 'server'], {weak: true});
 
   api.addFiles('client/helpers.coffee', 'client');
 });
