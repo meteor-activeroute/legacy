@@ -22,7 +22,7 @@ Package.onUse(function(api) {
 
   api.export('ActiveRoute');
 
-  api.addFiles('client/activeroute.coffee');
+  api.addFiles('lib/activeroute.coffee');
 
   api.addFiles('client/helpers.coffee', 'client');
 });
