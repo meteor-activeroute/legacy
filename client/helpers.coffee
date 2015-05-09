@@ -22,7 +22,7 @@ isActive = (type, inverse = false) ->
 
     pattern =
       className: Match.Optional String
-      regex: Match.Optional String
+      regex: Match.Optional RegExp, String
       route: Match.Optional String
       path: Match.Optional String
 
