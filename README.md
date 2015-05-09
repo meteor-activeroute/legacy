@@ -1,46 +1,106 @@
-[![Gitter](https://img.shields.io/badge/gitter-join_chat-brightgreen.svg)]
-(https://gitter.im/zimme/meteor-iron-router-active)
-[![Code Climate](https://img.shields.io/codeclimate/github/zimme/meteor-iron-router-active.svg)]
-(https://codeclimate.com/github/zimme/meteor-iron-router-active)
+[![Gitter](https://img.shields.io/badge/gitter-join_chat-brightgreen.svg)](https://gitter.im/zimme/meteor-active-route)
+[![Code Climate](https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg)](https://codeclimate.com/github/zimme/meteor-active-route)
 
-# Active route/path helpers for [Iron.Router](https://github.com/eventedmind/iron-router)
+# Active route helpers
 
-I used [iron-router-active](https://github.com/XpressiveCode/iron-router-active)
-as inspiration and did a coffeescript rewrite as it wasn't very active.
-I've made a small functional change and also an API rewrite.
-
-`isActiveRoute` and `isActivePath` returns the string `active` or boolean
-`false` unless you specify `className` then this string is returned instead of
-`active`.
-
-`isNotActiveRoute` and `isNotActivePath` returns the string `disabled` or
-boolean `false` unless you specify `className` then this string is returned
-instead of `disabled`.
+This package provide helpers for figuring out if some route or path is or isn't
+the currently active route.
 
 ### Install
+
 ```sh
-meteor add zimme:iron-router-active
+meteor add zimme:active-route
 ```
 
 ### Usage
+
+Basic usage examples.
+
+#### isActiveRoute
+
+Helper to check if the supplied route name matches the currently active route's
+name.
+
+Returns either a configurable `'string'`, which defaults to `'active'`, or
+`false`.
+
 ```html
-<nav>
-  <ul>
-    <li class="{{isActiveRoute regex='dashboard'}}">...</li>
-    <li class="{{isActiveRoute regex='dashboard|index'}}">...</li>
-    <li class="{{isActiveRoute regex='users' className='on'}}">...</li>
-    <li class="{{isActivePath regex='products'}}">...</li>
-    {{#if isActiveRoute regex='index'}}
-      <li>...</li>
-    {{/if}}
-    <li class="{{isNotActiveRoute regex='dashboard'}}">...</li>
-  </ul>
-</nav>
+<li class="{{isActiveRoute 'home'}}">...</li>
+<li class="{{isActiveRoute route='home'}}">...</li>
+<li class="{{isActiveRoute regex='home|dashboard'}}">...</li>
+{{#if isActiveRoute 'home'}}
+  <span>Show only if 'home' is the current route's name</span>
+{{/if}}
+{{#if isActiveRoute regex="^products"}}
+  <span>Show only if the current route's name begins with 'products'</span>
+{{/if}}
+
+<li class="{{isActiveRoute className="is-selected" route='home'}}">...</li>
 ```
 
-This helper uses regex which means strings like this will work too.
-```js
-'^dashboard$' // Exact match for 'dashboard'
-'^product' // Begins with 'product'
-'list$' // Ends with 'list'
+#### isActivePath
+
+Helper to check if the supplied path matches the currently active route's path.
+
+Returns either a configurable `'string'`, which defaults to `'active'`, or
+`false`.
+
+```html
+<li class="{{isActivePath '/home'}}">...</li>
+<li class="{{isActivePath path='/home'}}">...</li>
+<li class="{{isActivePath regex='home|dashboard'}}">...</li>
+{{#if isActivePath '/home'}}
+  <span>Show only if '/home' is the current route's path</span>
+{{/if}}
+{{#if isActivePath regex="^\\/products"}}
+  <span>Show only if current route's path begins with '/products'</span>
+{{/if}}
+
+<li class="{{isActivePath className="is-selected" path='/home'}}">...</li>
+```
+
+#### isNotActiveRoute
+
+Helper to check if the supplied route name doesn't match the currently active
+route's name.
+
+Returns either a configurable `'string'`, which defaults to `'disabled'`, or
+`false`.
+
+```html
+<li class="{{isNotActiveRoute 'home'}}">...</li>
+<li class="{{isNotActiveRoute route='home'}}">...</li>
+<li class="{{isNotActiveRoute regex='home|dashboard'}}">...</li>
+{{#if isNotActiveRoute 'home'}}
+  <span>Show only if 'home' isn't the current route's name</span>
+{{/if}}
+{{#if isNotActiveRoute regex="^products"}}
+  <span>
+    Show only if the current route's name doesn't begin with 'products'
+  </span>
+{{/if}}
+
+<li class="{{isActiveRoute className="is-disabled" route='home'}}">...</li>
+```
+
+#### isNotActivePath
+
+Helper to check if the supplied path doesn't match the currently active route's
+path.
+
+Returns either a configurable `'string'`, which defaults to `'disabled'`, or
+`false`.
+
+```html
+<li class="{{isNotActivePath '/home'}}">...</li>
+<li class="{{isNotActivePath path='/home'}}">...</li>
+<li class="{{isNotActivePath regex='home|dashboard'}}">...</li>
+{{#if isNotActivePath '/home'}}
+  <span>Show only if '/home' isn't the current route's path</span>
+{{/if}}
+{{#if isNotActivePath regex="^\\/products"}}
+  <span>Show only if current route's path doesn't begin with '/products'</span>
+{{/if}}
+
+<li class="{{isActivePath className="is-disabled" path='/home'}}">...</li>
 ```
