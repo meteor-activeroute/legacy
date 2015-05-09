@@ -18,7 +18,7 @@ Basic usage examples.
 
 #### isActiveRoute
 
-Helper to check if the supplied route name matches the currently active route's
+Template helper to check if the supplied route name matches the currently active route's
 name.
 
 Returns either a configurable `'string'`, which defaults to `'active'`, or
@@ -40,7 +40,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
 
 #### isActivePath
 
-Helper to check if the supplied path matches the currently active route's path.
+Template helper to check if the supplied path matches the currently active route's path.
 
 Returns either a configurable `'string'`, which defaults to `'active'`, or
 `false`.
@@ -61,7 +61,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
 
 #### isNotActiveRoute
 
-Helper to check if the supplied route name doesn't match the currently active
+Template helper to check if the supplied route name doesn't match the currently active
 route's name.
 
 Returns either a configurable `'string'`, which defaults to `'disabled'`, or
@@ -85,7 +85,7 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
 
 #### isNotActivePath
 
-Helper to check if the supplied path doesn't match the currently active route's
+Template elper to check if the supplied path doesn't match the currently active route's
 path.
 
 Returns either a configurable `'string'`, which defaults to `'disabled'`, or
@@ -103,4 +103,40 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
 {{/if}}
 
 <li class="{{isActivePath className="is-disabled" path='/home'}}">...</li>
+```
+
+#### ActiveRoute.route
+
+Helper to check if the supplied route name matches the currently active route's
+name.
+
+Returns either `true` or `false`.
+
+```js
+ActiveRoute.route('home');
+// Returns true if current route's name is 'home'.
+
+ActiveRoute.route(new RegExp('home|dashboard'));
+// Returns true if current route's name contains 'home' or 'dashboard'.
+
+ActiveRoute.route(/^products/);
+// Returns true if current route's name starts with 'home'.
+```
+
+#### ActiveRoute.path
+
+Helper to check if the supplied path matches the currently active route's path.
+
+Returns either `true` or `false`.
+
+```js
+ActiveRoute.path('/home');
+// Returns true if current route's path is '/home'.
+
+ActiveRoute.path(new RegExp('users'));
+// Returns true if current route's path contains 'users'.
+
+ActiveRoute.path(/\/edit$/i);
+// Returns true if current route's path ends with '/edit', matching is
+// case-insensitive
 ```
