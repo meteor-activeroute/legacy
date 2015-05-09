@@ -45,7 +45,7 @@ ActiveRoute =
     if ir
       currentRoute = ir.Router.current()?.route?.getName?()
 
-    if fr
+    if fr and Meteor.isClient
       currentRoute ?= fr.FlowRouter.reactiveCurrent()?.route?.name
 
     test currentRoute, route
@@ -58,7 +58,7 @@ ActiveRoute =
     if ir
       currentPath = ir.Router.current()?.location.get().path
 
-    if fr
+    if fr and Metor.isClient
       currentPath ?= fr.FlowRouter.current()?.path
 
     test currentPath, path
