@@ -12,11 +12,22 @@ the currently active route.
 meteor add zimme:active-route
 ```
 
-### Usage
+### Supported routers
+
+The currently supported routes are
+
+* `iron:router`
+* `meteorhacks:flow-router`
+
+If both routers are installed `iron:router` checks will take precedence.
+
+### Template helpers
+
+#### Usage
 
 Basic usage examples.
 
-#### isActiveRoute
+##### isActiveRoute
 
 Template helper to check if the supplied route name matches the currently active route's
 name.
@@ -38,7 +49,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
 <li class="{{isActiveRoute className="is-selected" route='home'}}">...</li>
 ```
 
-#### isActivePath
+##### isActivePath
 
 Template helper to check if the supplied path matches the currently active route's path.
 
@@ -59,7 +70,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
 <li class="{{isActivePath className="is-selected" path='/home'}}">...</li>
 ```
 
-#### isNotActiveRoute
+##### isNotActiveRoute
 
 Template helper to check if the supplied route name doesn't match the currently active
 route's name.
@@ -83,9 +94,9 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
 <li class="{{isActiveRoute className="is-disabled" route='home'}}">...</li>
 ```
 
-#### isNotActivePath
+##### isNotActivePath
 
-Template elper to check if the supplied path doesn't match the currently active route's
+Template helper to check if the supplied path doesn't match the currently active route's
 path.
 
 Returns either a configurable `'string'`, which defaults to `'disabled'`, or
@@ -105,7 +116,26 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
 <li class="{{isActivePath className="is-disabled" path='/home'}}">...</li>
 ```
 
-#### ActiveRoute.route
+#### Arguments
+
+The following can be used by the template helpers as arguments.
+
+* `data context`, Optional. `'string'`.
+* `route`, Optional. `'string'`. Only available for `isActiveRoute` and
+  `isNotActiveRoute`
+* `path`, Optional. `'string'`. Only available for `isActivePath` and
+  `isNotActivePath`.
+* `regex`, Optional. `'string'` or `RegExp`.
+
+At least one of `data context`, `route` or `path` need to be supplied.
+
+### Javascript helpers
+
+#### Usage
+
+Basic usage examples.
+
+##### ActiveRoute.route
 
 Helper to check if the supplied route name matches the currently active route's
 name.
@@ -123,7 +153,7 @@ ActiveRoute.route(/^products/);
 // Returns true if current route's name starts with 'home'.
 ```
 
-#### ActiveRoute.path
+##### ActiveRoute.path
 
 Helper to check if the supplied path matches the currently active route's path.
 
@@ -139,4 +169,26 @@ ActiveRoute.path(new RegExp('users'));
 ActiveRoute.path(/\/edit$/i);
 // Returns true if current route's path ends with '/edit', matching is
 // case-insensitive
+```
+
+#### Arguments
+
+The javascript helpers accepts `'string'` or `RegExp` as an argument.
+
+### Global options
+
+* `caseSensitive`, Optional. Set to `false` to make matching case-insensitive.
+* `active`, Optional. Set to `'string'` to change the default `className` for
+  `isActiveRoute` and `isActivePath`.
+* `disabled`, Optiona. Set to `'string'` to chagne the default `className` for
+  `isNotActiveRoute` and `isNotActivePath`.
+
+```js
+// Configure helpers globally
+// The settings below are the package default settings
+ActiveRoute.configure({
+  active: 'active',
+  casSensitive: true,
+  disabled: 'disabled'
+});
 ```
