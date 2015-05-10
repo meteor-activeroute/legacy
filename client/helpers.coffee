@@ -42,7 +42,7 @@ isActive = (type, inverse = false) ->
         "#{t}=\"#{t}\" or regex=\"regex\""
 
     if Match.test regex, String
-      if share.config?.caseSensitive is false
+      if share.config.equals 'caseSensitive', false
         regex = new RegExp regex, 'i'
 
       else
@@ -50,7 +50,10 @@ isActive = (type, inverse = false) ->
 
     regex ?= route or path
 
-    className ?= if inverse then 'disabled' else 'active'
+    if inverse
+      className ?= share.config.get 'disabled'
+    else
+      className ?= share.config.get 'active'
 
     isPath = true if type is 'Path'
 
