@@ -17,13 +17,19 @@ errorMessages =
 
   invalidArgument: 'Invalid argument, must be String or RegExp.'
 
+share.config = new ReactiveDict 'activeRouteConfig'
+share.config.set
+  active: 'active'
+  caseSensitive: true
+  disabled: 'disabled'
+
 test = (value, pattern) ->
   if Match.test pattern, RegExp
     result = value.search pattern
     result = result > -1
 
   else if Match.test pattern, String
-    if share.config?.caseSensitive is false
+    if share.config.equals 'caseSensitive', false
       value = value.toLowerCase()
       pattern = pattern.toLowerCase()
 
@@ -33,8 +39,11 @@ test = (value, pattern) ->
 
 ActiveRoute =
 
+  config: ->
+    @configure.apply this, arguments
+
   configure: (options) ->
-    share.config = _.defaults options, {}
+    share.config.set options
     return
 
   route: (route) ->

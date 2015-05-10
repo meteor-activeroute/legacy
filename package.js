@@ -11,6 +11,7 @@ Package.onUse(function(api) {
   api.use([
     'check',
     'coffeescript',
+    'reactive-dict',
     'underscore'
   ]);
 
