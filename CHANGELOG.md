@@ -18,5 +18,10 @@
     `{{> isActiveRoute 'home'}}`
   * Use string comparison where possible
 
+## Previous
+
+  * See [git history].
+
 [2.0.0-alpha.2]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.1...2.0.0-alpha.2
 [2.0.0-alpha.1]: https://github.com/zimme/meteor-iron-router-active/compare/1.0.4...2.0.0-alpha.1
+[git history]: https://github.com/zimme/meteor-iron-router-active/commits
