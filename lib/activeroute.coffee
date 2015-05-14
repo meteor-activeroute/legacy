@@ -68,6 +68,6 @@ ActiveRoute =
       currentPath = ir.Router.current()?.location.get().path
 
     if fr and Meteor.isClient
-      currentPath ?= fr.FlowRouter.current()?.path
+      currentPath ?= fr.FlowRouter.reactiveCurrent()?.path
 
     test currentPath, path
