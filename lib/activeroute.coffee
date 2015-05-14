@@ -46,18 +46,18 @@ ActiveRoute =
     share.config.set options
     return
 
-  route: (route) ->
+  route: (routeName) ->
     checkRouterPackages()
 
-    checkArgument route
+    checkArgument routeName
 
     if ir
-      currentRoute = ir.Router.current()?.route?.getName?()
+      currentRouteName = ir.Router.current()?.route?.getName?()
 
     if fr and Meteor.isClient
-      currentRoute ?= fr.FlowRouter.getRouteName()
+      currentRouteName ?= fr.FlowRouter.getRouteName()
 
-    test currentRoute, route
+    test currentRouteName, routeName
 
   path: (path) ->
     checkRouterPackages()
