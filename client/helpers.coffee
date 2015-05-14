@@ -61,7 +61,7 @@ isActive = (type, inverse = false) ->
       result = ActiveRoute.path regex
 
     else
-      result = ActiveRoute.route regex
+      result = ActiveRoute.name regex
 
     result = not result if inverse
 

@@ -46,7 +46,7 @@ ActiveRoute =
     share.config.set options
     return
 
-  route: (routeName) ->
+  name: (routeName) ->
     checkRouterPackages()
 
     checkArgument routeName
