@@ -19,9 +19,9 @@ errorMessages =
 
 share.config = new ReactiveDict 'activeRouteConfig'
 share.config.set
-  active: 'active'
+  activeClass: 'active'
   caseSensitive: true
-  disabled: 'disabled'
+  disabledClass: 'disabled'
 
 test = (value, pattern) ->
   if Match.test pattern, RegExp
