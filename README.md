@@ -1,5 +1,5 @@
-[![Gitter](https://img.shields.io/badge/gitter-join_chat-brightgreen.svg)](https://gitter.im/zimme/meteor-active-route)
-[![Code Climate](https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg)](https://codeclimate.com/github/zimme/meteor-active-route)
+[![Gitter]](https://gitter.im/zimme/meteor-active-route)
+[![Code Climate]](https://codeclimate.com/github/zimme/meteor-active-route)
 
 # Active route helpers
 
@@ -199,3 +199,6 @@ ActiveRoute.configure({
   `zimme:iron-router-active@1.0.4`
 * `ActiveRoute.config` is an alias for `ActiveRoute.configure`.
 * `className` is an alias for `class` in the template helpers.
+
+[Code Climate]: https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg
+[Gitter]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
