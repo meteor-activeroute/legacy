@@ -16,27 +16,27 @@ isActive = (type, inverse = false) ->
 
       else
         hash =
-          route: view
+          name: view
 
       view = hash: hash
 
     pattern =
       className: Match.Optional String
       regex: Match.Optional RegExp, String
-      route: Match.Optional String
+      name: Match.Optional String
       path: Match.Optional String
 
     check view.hash, pattern
 
-    {className, regex, route, path} = view.hash
+    {className, regex, name, path} = view.hash
 
     if type is 'Path'
-      route = null
+      name = null
 
     else
       path = null
 
-    unless regex or route or path
+    unless regex or name or path
       t = type.toLowerCase()
       throw new Error "Invalid argument, #{name} takes \"#{t}\", " +
         "#{t}=\"#{t}\" or regex=\"regex\""
@@ -48,7 +48,7 @@ isActive = (type, inverse = false) ->
       else
         regex = new RegExp regex
 
-    regex ?= route or path
+    regex ?= name or path
 
     if inverse
       className ?= share.config.get 'disabledClassName'

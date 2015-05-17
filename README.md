@@ -37,7 +37,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
 
 ```html
 <li class="{{isActiveRoute 'home'}}">...</li>
-<li class="{{isActiveRoute route='home'}}">...</li>
+<li class="{{isActiveRoute name='home'}}">...</li>
 <li class="{{isActiveRoute regex='home|dashboard'}}">...</li>
 {{#if isActiveRoute 'home'}}
   <span>Show only if 'home' is the current route's name</span>
@@ -46,7 +46,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
   <span>Show only if the current route's name begins with 'products'</span>
 {{/if}}
 
-<li class="{{isActiveRoute className="is-selected" route='home'}}">...</li>
+<li class="{{isActiveRoute className="is-selected" name='home'}}">...</li>
 ```
 
 ##### isActivePath
@@ -80,7 +80,7 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
 
 ```html
 <li class="{{isNotActiveRoute 'home'}}">...</li>
-<li class="{{isNotActiveRoute route='home'}}">...</li>
+<li class="{{isNotActiveRoute name='home'}}">...</li>
 <li class="{{isNotActiveRoute regex='home|dashboard'}}">...</li>
 {{#if isNotActiveRoute 'home'}}
   <span>Show only if 'home' isn't the current route's name</span>
@@ -91,7 +91,7 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
   </span>
 {{/if}}
 
-<li class="{{isActiveRoute className="is-disabled" route='home'}}">...</li>
+<li class="{{isActiveRoute className="is-disabled" name='home'}}">...</li>
 ```
 
 ##### isNotActivePath
