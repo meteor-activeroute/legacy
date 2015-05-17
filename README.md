@@ -192,7 +192,7 @@ ActiveRoute.configure({
   disabled: 'disabled'
 });
 
-// Alias
+// Alias for ActiveRoute.configure
 ActiveRoute.config({
   active: 'is-selected',
   disabled: 'is-disabled'
