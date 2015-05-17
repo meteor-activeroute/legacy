@@ -16,8 +16,8 @@ meteor add zimme:active-route
 
 The currently supported routes are
 
-* `iron:router`
-* `meteorhacks:flow-router`
+* [`iron:router`](https://atmospherejs.com/iron/router)
+* [`meteorhacks:flow-router`](https://atmospherejs.com/meteorhacks/flow-router)
 
 If both routers are installed `iron:router` checks will take precedence.
 
