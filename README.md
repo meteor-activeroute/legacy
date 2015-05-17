@@ -199,6 +199,8 @@ ActiveRoute.configure({
   `zimme:iron-router-active@1.0.4`
 * `ActiveRoute.config` is an alias for `ActiveRoute.configure`.
 * `className` is an alias for `class` in the template helpers.
+* This package supports javascript's `RegExp`, [here][Regexp]'s some good info.
 
 [Code Climate]: https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg
 [Gitter]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
+[Regexp]: https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
