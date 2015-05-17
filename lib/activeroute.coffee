@@ -43,18 +43,22 @@ ActiveRoute =
     @configure.apply this, arguments
 
   configure: (options) ->
+    return if Meteor.isServer
+
     share.config.set options
     return
 
   name: (routeName) ->
     checkRouterPackages()
 
+    return if Meteor.isServer
+
     checkArgument routeName
 
     if ir
       currentRouteName = ir.Router.current()?.route?.getName?()
 
-    if fr and Meteor.isClient
+    if fr
       currentRouteName ?= fr.FlowRouter.getRouteName()
 
     test currentRouteName, routeName
@@ -62,12 +66,14 @@ ActiveRoute =
   path: (path) ->
     checkRouterPackages()
 
+    return if Meteor.isServer
+
     checkArgument path
 
     if ir
       currentPath = ir.Router.current()?.location.get().path
 
-    if fr and Meteor.isClient
+    if fr
       currentPath ?= fr.FlowRouter.reactiveCurrent()?.path
 
     test currentPath, path
