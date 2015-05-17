@@ -178,23 +178,23 @@ The javascript helpers accepts `'string'` or `RegExp` as an argument.
 ### Global options
 
 * `caseSensitive`, Optional. Set to `false` to make matching case-insensitive.
-* `active`, Optional. Set to `'string'` to change the default `className` for
-  `isActiveRoute` and `isActivePath`.
-* `disabled`, Optional. Set to `'string'` to change the default `className` for
-  `isNotActiveRoute` and `isNotActivePath`.
+* `activeClassName`, Optional. Set to `'string'` to change the default
+  `className` for `isActiveRoute` and `isActivePath`.
+* `disabledClassName`, Optional. Set to `'string'` to change the default
+  `className` for `isNotActiveRoute` and `isNotActivePath`.
 
 ```js
 // Configure helpers globally
 // The settings below are the package default settings
 ActiveRoute.configure({
-  active: 'active',
-  casSensitive: true,
-  disabled: 'disabled'
+  activeClassName: 'active',
+  caseSensitive: true,
+  disabledClassName: 'disabled'
 });
 
 // Alias for ActiveRoute.configure
 ActiveRoute.config({
-  active: 'is-selected',
-  disabled: 'is-disabled'
+  activeClassName: 'is-selected',
+  disabledClassName: 'is-disabled'
 });
 ```

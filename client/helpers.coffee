@@ -51,9 +51,9 @@ isActive = (type, inverse = false) ->
     regex ?= route or path
 
     if inverse
-      className ?= share.config.get 'disabled'
+      className ?= share.config.get 'disabledClassName'
     else
-      className ?= share.config.get 'active'
+      className ?= share.config.get 'activeClassName'
 
     isPath = true if type is 'Path'
 
