@@ -46,7 +46,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
   <span>Show only if the current route's name begins with 'products'</span>
 {{/if}}
 
-<li class="{{isActiveRoute className="is-selected" name='home'}}">...</li>
+<li class="{{isActiveRoute class="is-selected" name='home'}}">...</li>
 ```
 
 ##### isActivePath
@@ -67,7 +67,7 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
   <span>Show only if current route's path begins with '/products'</span>
 {{/if}}
 
-<li class="{{isActivePath className="is-selected" path='/home'}}">...</li>
+<li class="{{isActivePath class="is-selected" path='/home'}}">...</li>
 ```
 
 ##### isNotActiveRoute
@@ -91,7 +91,7 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
   </span>
 {{/if}}
 
-<li class="{{isActiveRoute className="is-disabled" name='home'}}">...</li>
+<li class="{{isActiveRoute class="is-disabled" name='home'}}">...</li>
 ```
 
 ##### isNotActivePath
@@ -113,7 +113,7 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
   <span>Show only if current route's path doesn't begin with '/products'</span>
 {{/if}}
 
-<li class="{{isActivePath className="is-disabled" path='/home'}}">...</li>
+<li class="{{isActivePath class="is-disabled" path='/home'}}">...</li>
 ```
 
 #### Arguments
@@ -178,18 +178,18 @@ The javascript helpers accepts `'string'` or `RegExp` as an argument.
 ### Global options
 
 * `caseSensitive`, Optional. Set to `false` to make matching case-insensitive.
-* `activeClassName`, Optional. Set to `'string'` to change the default
-  `className` for `isActiveRoute` and `isActivePath`.
-* `disabledClassName`, Optional. Set to `'string'` to change the default
-  `className` for `isNotActiveRoute` and `isNotActivePath`.
+* `activeClass`, Optional. Set to `'string'` to change the default
+  `class` for `isActiveRoute` and `isActivePath`.
+* `disabledClass`, Optional. Set to `'string'` to change the default
+  `class` for `isNotActiveRoute` and `isNotActivePath`.
 
 ```js
 // Configure helpers globally
 // The settings below are the package default settings
 ActiveRoute.configure({
-  activeClassName: 'active',
+  activeClass: 'active',
   caseSensitive: true,
-  disabledClassName: 'disabled'
+  disabledClass: 'disabled'
 });
 ```
 
@@ -198,3 +198,4 @@ ActiveRoute.configure({
 * This version should be backwards-compatible with
   `zimme:iron-router-active@1.0.4`
 * `ActiveRoute.config` is an alias for `ActiveRoute.configure`.
+* `className` is an alias for `class` in the template helpers.

@@ -21,6 +21,7 @@ isActive = (type, inverse = false) ->
       view = hash: hash
 
     pattern =
+      class: Match.Optional String
       className: Match.Optional String
       regex: Match.Optional RegExp, String
       name: Match.Optional String
@@ -28,7 +29,9 @@ isActive = (type, inverse = false) ->
 
     check view.hash, pattern
 
-    {className, regex, name, path} = view.hash
+    {regex, name, path} = view.hash
+
+    className = view.hash.class ? view.hash.className
 
     if type is 'Path'
       name = null
@@ -51,9 +54,9 @@ isActive = (type, inverse = false) ->
     regex ?= name or path
 
     if inverse
-      className ?= share.config.get 'disabledClassName'
+      className ?= share.config.get 'disabledClass'
     else
-      className ?= share.config.get 'activeClassName'
+      className ?= share.config.get 'activeClass'
 
     isPath = true if type is 'Path'
 
