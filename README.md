@@ -128,7 +128,7 @@ The following can be used by the template helpers as arguments.
   `isNotActivePath`.
 * `regex`, Optional. `'string'` or `RegExp`.
 
-At least one of `data context`, `route` or `path` need to be supplied.
+At least one of Data context, `route` or `path` need to be supplied.
 
 ### Javascript helpers
 
