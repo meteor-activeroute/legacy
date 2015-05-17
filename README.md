@@ -135,7 +135,7 @@ At least one of `data context`, `route` or `path` need to be supplied.
 
 Basic usage examples.
 
-##### ActiveRoute.route
+##### ActiveRoute.name
 
 Helper to check if the supplied route name matches the currently active route's
 name.
@@ -143,13 +143,13 @@ name.
 Returns either `true` or `false`.
 
 ```js
-ActiveRoute.route('home');
+ActiveRoute.name('home');
 // Returns true if current route's name is 'home'.
 
-ActiveRoute.route(new RegExp('home|dashboard'));
+ActiveRoute.name(new RegExp('home|dashboard'));
 // Returns true if current route's name contains 'home' or 'dashboard'.
 
-ActiveRoute.route(/^products/);
+ActiveRoute.name(/^products/);
 // Returns true if current route's name starts with 'home'.
 ```
 
