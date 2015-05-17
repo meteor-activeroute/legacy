@@ -191,4 +191,10 @@ ActiveRoute.configure({
   casSensitive: true,
   disabled: 'disabled'
 });
+
+// Alias
+ActiveRoute.config({
+  active: 'is-selected',
+  disabled: 'is-disabled'
+});
 ```
