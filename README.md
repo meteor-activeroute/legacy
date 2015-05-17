@@ -191,10 +191,10 @@ ActiveRoute.configure({
   caseSensitive: true,
   disabledClassName: 'disabled'
 });
-
-// Alias for ActiveRoute.configure
-ActiveRoute.config({
-  activeClassName: 'is-selected',
-  disabledClassName: 'is-disabled'
-});
 ```
+
+### Notes
+
+* This version should be backwards-compatible with
+  `zimme:iron-router-active@1.0.4`
+* `ActiveRoute.config` is an alias for `ActiveRoute.configure`.
