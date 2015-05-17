@@ -29,10 +29,10 @@ Basic usage examples.
 
 ##### isActiveRoute
 
-Template helper to check if the supplied route name matches the currently active route's
-name.
+Template helper to check if the supplied route name matches the currently active
+route's name.
 
-Returns either a configurable `'string'`, which defaults to `'active'`, or
+Returns either a configurable `string`, which defaults to `'active'`, or
 `false`.
 
 ```html
@@ -42,18 +42,19 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
 {{#if isActiveRoute 'home'}}
   <span>Show only if 'home' is the current route's name</span>
 {{/if}}
-{{#if isActiveRoute regex="^products"}}
+{{#if isActiveRoute regex='^products'}}
   <span>Show only if the current route's name begins with 'products'</span>
 {{/if}}
 
-<li class="{{isActiveRoute class="is-selected" name='home'}}">...</li>
+<li class="{{isActiveRoute class='is-selected' name='home'}}">...</li>
 ```
 
 ##### isActivePath
 
-Template helper to check if the supplied path matches the currently active route's path.
+Template helper to check if the supplied path matches the currently active
+route's path.
 
-Returns either a configurable `'string'`, which defaults to `'active'`, or
+Returns either a configurable `string`, which defaults to `'active'`, or
 `false`.
 
 ```html
@@ -63,19 +64,19 @@ Returns either a configurable `'string'`, which defaults to `'active'`, or
 {{#if isActivePath '/home'}}
   <span>Show only if '/home' is the current route's path</span>
 {{/if}}
-{{#if isActivePath regex="^\\/products"}}
+{{#if isActivePath regex='^\\/products'}}
   <span>Show only if current route's path begins with '/products'</span>
 {{/if}}
 
-<li class="{{isActivePath class="is-selected" path='/home'}}">...</li>
+<li class="{{isActivePath class='is-selected' path='/home'}}">...</li>
 ```
 
 ##### isNotActiveRoute
 
-Template helper to check if the supplied route name doesn't match the currently active
-route's name.
+Template helper to check if the supplied route name doesn't match the currently
+active route's name.
 
-Returns either a configurable `'string'`, which defaults to `'disabled'`, or
+Returns either a configurable `string`, which defaults to `'disabled'`, or
 `false`.
 
 ```html
@@ -85,21 +86,21 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
 {{#if isNotActiveRoute 'home'}}
   <span>Show only if 'home' isn't the current route's name</span>
 {{/if}}
-{{#if isNotActiveRoute regex="^products"}}
+{{#if isNotActiveRoute regex='^products'}}
   <span>
     Show only if the current route's name doesn't begin with 'products'
   </span>
 {{/if}}
 
-<li class="{{isActiveRoute class="is-disabled" name='home'}}">...</li>
+<li class="{{isActiveRoute class='is-disabled' name='home'}}">...</li>
 ```
 
 ##### isNotActivePath
 
-Template helper to check if the supplied path doesn't match the currently active route's
-path.
+Template helper to check if the supplied path doesn't match the currently active
+route's path.
 
-Returns either a configurable `'string'`, which defaults to `'disabled'`, or
+Returns either a configurable `string`, which defaults to `'disabled'`, or
 `false`.
 
 ```html
@@ -109,18 +110,18 @@ Returns either a configurable `'string'`, which defaults to `'disabled'`, or
 {{#if isNotActivePath '/home'}}
   <span>Show only if '/home' isn't the current route's path</span>
 {{/if}}
-{{#if isNotActivePath regex="^\\/products"}}
+{{#if isNotActivePath regex='^\\/products'}}
   <span>Show only if current route's path doesn't begin with '/products'</span>
 {{/if}}
 
-<li class="{{isActivePath class="is-disabled" path='/home'}}">...</li>
+<li class="{{isActivePath class='is-disabled' path='/home'}}">...</li>
 ```
 
 #### Arguments
 
 The following can be used by the template helpers as arguments.
 
-* `data context`, Optional. `'string'`.
+* Data context, Optional. `'string'`.
 * `route`, Optional. `'string'`. Only available for `isActiveRoute` and
   `isNotActiveRoute`
 * `path`, Optional. `'string'`. Only available for `isActivePath` and
@@ -177,9 +178,9 @@ The javascript helpers accepts `'string'` or `RegExp` as an argument.
 
 ### Global options
 
-* `caseSensitive`, Optional. Set to `false` to make matching case-insensitive.
 * `activeClass`, Optional. Set to `'string'` to change the default
   `class` for `isActiveRoute` and `isActivePath`.
+* `caseSensitive`, Optional. Set to `false` to make matching case-insensitive.
 * `disabledClass`, Optional. Set to `'string'` to change the default
   `class` for `isNotActiveRoute` and `isNotActivePath`.
 
@@ -195,7 +196,7 @@ ActiveRoute.configure({
 
 ### Notes
 
-* This version should be backwards-compatible with
+* This version SHOULD be backwards-compatible with
   `zimme:iron-router-active@1.0.4`
 * `ActiveRoute.config` is an alias for `ActiveRoute.configure`.
 * `className` is an alias for `class` in the template helpers.
