@@ -180,7 +180,7 @@ The javascript helpers accepts `'string'` or `RegExp` as an argument.
 * `caseSensitive`, Optional. Set to `false` to make matching case-insensitive.
 * `active`, Optional. Set to `'string'` to change the default `className` for
   `isActiveRoute` and `isActivePath`.
-* `disabled`, Optiona. Set to `'string'` to chagne the default `className` for
+* `disabled`, Optional. Set to `'string'` to change the default `className` for
   `isNotActiveRoute` and `isNotActivePath`.
 
 ```js
