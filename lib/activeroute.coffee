@@ -75,6 +75,7 @@ ActiveRoute =
       currentPath = controller?.location.get().path if controller.route
 
     if fr
-      currentPath ?= fr.FlowRouter.reactiveCurrent()?.path
+      fr.FlowRouter.watchPathChange()
+      currentPath ?= fr.FlowRouter.current().path
 
     test currentPath, path

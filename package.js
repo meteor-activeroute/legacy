@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   ]);
 
   api.use([
-    'meteorhacks:flow-router@1.7.0',
+    'meteorhacks:flow-router@1.8.0',
     'iron:router@1.0.0',
     'templating'
   ], ['client', 'server'], {weak: true});
