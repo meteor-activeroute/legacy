@@ -71,7 +71,8 @@ ActiveRoute =
     checkArgument path
 
     if ir
-      currentPath = ir.Router.current()?.location.get().path
+      controller = ir.Router.current()
+      currentPath = controller?.location.get().path if controller.route
 
     if fr
       currentPath ?= fr.FlowRouter.reactiveCurrent()?.path
