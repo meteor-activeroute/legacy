@@ -1,5 +1,7 @@
 [![Gitter]](https://gitter.im/zimme/meteor-active-route)
 [![Code Climate]](https://codeclimate.com/github/zimme/meteor-active-route)
+[![Travis](https://img.shields.io/travis/zimme/meteor-iron-router-active.svg)]
+(https://travis-ci.org/zimme/meteor-iron-router-active)
 
 # Active route helpers
 
