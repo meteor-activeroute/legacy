@@ -27,3 +27,18 @@ Package.onUse(function(api) {
 
   api.addFiles('client/helpers.coffee', 'client');
 });
+
+Package.onTest(function(api) {
+  api.versionsFrom('1.0');
+
+  api.use([
+    'coffeescript',
+    'mike:mocha-package@0.5.7',
+    'practicalmeteor:chai@1.9.2_3',
+    'zimme:active-route'
+  ]);
+
+  api.addFiles('tests/lib/activeroute.coffee');
+
+  api.addFiles('tests/client/helpers.coffee', 'client');
+});
