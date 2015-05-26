@@ -8,13 +8,13 @@
 This package provide helpers for figuring out if some route or path is or isn't
 the currently active route.
 
-### Install
+## Install
 
 ```sh
 meteor add zimme:active-route
 ```
 
-### Supported routers
+## Supported routers
 
 The currently supported routes are
 
@@ -23,13 +23,13 @@ The currently supported routes are
 
 If both routers are installed `iron:router` checks will take precedence.
 
-### Template helpers
+## Template helpers
 
-#### Usage
+### Usage
 
 Basic usage examples.
 
-##### isActiveRoute
+#### isActiveRoute
 
 Template helper to check if the supplied route name matches the currently active
 route's name.
@@ -51,7 +51,7 @@ Returns either a configurable `string`, which defaults to `'active'`, or
 <li class="{{isActiveRoute class='is-selected' name='home'}}">...</li>
 ```
 
-##### isActivePath
+#### isActivePath
 
 Template helper to check if the supplied path matches the currently active
 route's path.
@@ -73,7 +73,7 @@ Returns either a configurable `string`, which defaults to `'active'`, or
 <li class="{{isActivePath class='is-selected' path='/home'}}">...</li>
 ```
 
-##### isNotActiveRoute
+#### isNotActiveRoute
 
 Template helper to check if the supplied route name doesn't match the currently
 active route's name.
@@ -97,7 +97,7 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
 <li class="{{isActiveRoute class='is-disabled' name='home'}}">...</li>
 ```
 
-##### isNotActivePath
+#### isNotActivePath
 
 Template helper to check if the supplied path doesn't match the currently active
 route's path.
@@ -119,7 +119,7 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
 <li class="{{isActivePath class='is-disabled' path='/home'}}">...</li>
 ```
 
-#### Arguments
+### Arguments
 
 The following can be used by the template helpers as arguments.
 
@@ -132,13 +132,13 @@ The following can be used by the template helpers as arguments.
 
 At least one of Data context, `route` or `path` need to be supplied.
 
-### Javascript helpers
+## Javascript helpers
 
-#### Usage
+### Usage
 
 Basic usage examples.
 
-##### ActiveRoute.name
+#### ActiveRoute.name
 
 Helper to check if the supplied route name matches the currently active route's
 name.
@@ -156,7 +156,7 @@ ActiveRoute.name(/^products/);
 // Returns true if current route's name starts with 'home'.
 ```
 
-##### ActiveRoute.path
+#### ActiveRoute.path
 
 Helper to check if the supplied path matches the currently active route's path.
 
@@ -174,11 +174,11 @@ ActiveRoute.path(/\/edit$/i);
 // case-insensitive
 ```
 
-#### Arguments
+### Arguments
 
 The javascript helpers accepts `'string'` or `RegExp` as an argument.
 
-### Global options
+## Global options
 
 * `activeClass`, Optional. Set to `'string'` to change the default
   `class` for `isActiveRoute` and `isActivePath`.
@@ -196,7 +196,7 @@ ActiveRoute.configure({
 });
 ```
 
-### Notes
+## Notes
 
 * This version SHOULD be backwards-compatible with
   `zimme:iron-router-active@1.0.4`
