@@ -1,3 +1,11 @@
+## [2.0.0-beta.1] - 2015-05-26
+
+  * Refactor parts of code to support testing better
+  * Add tests
+  * Add Travis-CI for testing
+  * Fix argument check for regex option in template helpers
+  * Retroactively fix CHANGELOG.md
+
 ## [2.0.0-alpha.4] - 2015-05-24
 
   * Fix iron:router always overriding meteorhacks:flow-router for paths
@@ -37,6 +45,7 @@
 
   * See [git history].
 
+[2.0.0-beta.1]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.4...2.0.0-beta.1
 [2.0.0-alpha.4]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.3...2.0.0-alpha.4
 [2.0.0-alpha.3]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.2...2.0.0-alpha.3
 [2.0.0-alpha.2]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.1...2.0.0-alpha.2
