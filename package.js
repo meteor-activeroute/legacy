@@ -1,5 +1,5 @@
 Package.describe({
-  git: 'https://github.com/zimme/meteor-active-route.git',
+  git: 'https://github.com/zimme/meteor-iron-router-active.git',
   name: 'zimme:active-route',
   summary: 'Active route helpers',
   version: '2.0.0-beta.1'
