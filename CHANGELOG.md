@@ -1,3 +1,18 @@
+## [2.0.0-alpha.4] - 2015-05-24
+
+  * Fix iron:router always overriding meteorhacks:flow-router for paths
+  * Use flow-router's new reactive api
+
+## [2.0.0-alpha.3] - 2015-05-19
+
+  * Drop server-side support for now
+  * Make ActiveRoute.path reactive for flow-router
+  * Use FlowRouter.getRouteName function
+  * Add a "Previous" section to CHANGELOG.md
+  * Move `ActiveRoute.route` to `ActiveRoute.name`
+  * Add some notes about the package and aliases to README.md
+  * Use more explicit variable names in configuration
+
 ## [2.0.0-alpha.2] - 2015-05-12
 
   * Allow `RegExp` in template helpers. i.e. `new RegExp('^home')`
@@ -22,6 +37,8 @@
 
   * See [git history].
 
+[2.0.0-alpha.4]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.3...2.0.0-alpha.4
+[2.0.0-alpha.3]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.2...2.0.0-alpha.3
 [2.0.0-alpha.2]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.1...2.0.0-alpha.2
 [2.0.0-alpha.1]: https://github.com/zimme/meteor-iron-router-active/compare/1.0.4...2.0.0-alpha.1
 [git history]: https://github.com/zimme/meteor-iron-router-active/commits
