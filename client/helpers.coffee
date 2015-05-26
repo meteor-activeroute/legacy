@@ -23,7 +23,7 @@ isActive = (type, inverse = false) ->
     pattern =
       class: Match.Optional String
       className: Match.Optional String
-      regex: Match.Optional RegExp, String
+      regex: Match.Optional Match.OneOf RegExp, String
       name: Match.Optional String
       path: Match.Optional String
 
