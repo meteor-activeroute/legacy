@@ -1,105 +1,95 @@
 makeClientTests = ->
 
-  describe.client 'on client', ->
+  it 'ActiveRoute.name(\'home\')', ->
+    expect ActiveRoute.name 'home'
+      .to.be.true
 
-    describe 'ActiveRoute.name', ->
+  it 'ActiveRoute.name(new RegExp(\'home\'))', ->
+    expect ActiveRoute.name new RegExp 'home'
+      .to.be.true
 
-      it 'ActiveRoute.name(\'home\')', ->
-        expect ActiveRoute.name 'home'
-          .to.be.true
+  it 'ActiveRoute.name(/home/)', ->
+    expect ActiveRoute.name /home/
+      .to.be.true
 
-      it 'ActiveRoute.name(new RegExp(\'home\'))', ->
-        expect ActiveRoute.name new RegExp 'home'
-          .to.be.true
+  it 'ActiveRoute.path(\'/\')', ->
+    expect ActiveRoute.path '/'
+      .to.be.true
 
-      it 'ActiveRoute.name(/home/)', ->
-        expect ActiveRoute.name /home/
-          .to.be.true
+  it 'ActiveRoute.path(new RegExp(\'\\\\/\'))', ->
+    expect ActiveRoute.path new RegExp '\\/'
+      .to.be.true
 
-    describe 'ActiveRoute.path', ->
-
-      it 'ActiveRoute.path(\'/\')', ->
-        expect ActiveRoute.path '/'
-          .to.be.true
-
-      it 'ActiveRoute.path(new RegExp(\'\\\\/\'))', ->
-        expect ActiveRoute.path new RegExp '\\/'
-          .to.be.true
-
-      it 'ActiveRoute.path(/\\//)', ->
-        expect ActiveRoute.path /\//
-          .to.be.true
+  it 'ActiveRoute.path(/\\//)', ->
+    expect ActiveRoute.path /\//
+      .to.be.true
 
   return
 
 makeServerTests = ->
 
-  describe.server 'on server', ->
+  describe 'Should always return undefined', ->
 
-    describe 'ActiveRoute.config', ->
+    it 'ActiveRoute.config', ->
+      expect ActiveRoute.config caseSensitive: false
+        .to.be.undefined
 
-      it 'Should always return undefined', ->
-        expect ActiveRoute.config caseSensitive: false
-          .to.be.undefined
+    it 'ActiveRoute.configure', ->
+      expect ActiveRoute.configure caseSensitive: false
+        .to.be.undefined
 
-    describe 'ActiveRoute.configure', ->
+    it 'ActiveRoute.name', ->
+      expect ActiveRoute.name 'home'
+        .to.be.undefined
 
-      it 'Should always return undefined', ->
-        expect ActiveRoute.configure caseSensitive: false
-          .to.be.undefined
-
-    describe 'ActiveRoute.name', ->
-
-      it 'Should always return undefined', ->
-        expect ActiveRoute.name 'home'
-          .to.be.undefined
-
-    describe 'ActiveRoute.path', ->
-
-      it 'Should always return undefined', ->
-        expect ActiveRoute.path '/'
+    it 'ActiveRoute.path', ->
+      expect ActiveRoute.path '/'
 
   return
 
-describe 'Test javascript API', ->
+describe 'Router: iron:router', ->
 
-  describe 'with iron:router', ->
+  after ->
+    delete Package["iron:router"]
 
-    after ->
-      delete Package["iron:router"]
+  before ->
+    Router =
+      current: ->
+        route:
+          getName: ->
+            'home'
 
-    before ->
-      Router =
-        current: ->
-          route:
-            getName: ->
-              'home'
+        location:
+          get: ->
+            path: '/'
 
-          location:
-            get: ->
-              path: '/'
+    Package['iron:router'] = Router: Router
 
-      Package['iron:router'] = Router: Router
+  describe.client 'Client', ->
 
     makeClientTests()
 
+  describe.server 'Server', ->
+
     makeServerTests()
 
-  describe 'Test with meteorhacks:flow-router', ->
+describe 'Router: meteorhacks:flow-router', ->
 
-    after ->
-      delete Package['meteorhacks:flow-router']
+  after ->
+    delete Package['meteorhacks:flow-router']
 
-    before ->
-      Router =
-        current: ->
-          path: '/'
+  before ->
+    Router =
+      current: ->
+        path: '/'
 
-        getRouteName: ->
-          'home'
+      getRouteName: ->
+        'home'
 
-        watchPathChange: ->
+      watchPathChange: ->
 
-      Package['meteorhacks:flow-router'] = FlowRouter: Router
+    Package['meteorhacks:flow-router'] = FlowRouter: Router
+
+  describe.client 'Client', ->
 
     makeClientTests()
