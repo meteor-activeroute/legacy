@@ -1,3 +1,9 @@
+## [2.0.1] - 2015-06-01
+
+  * Add license and badge
+  * Add .editorconfig
+  * Add .gitattributes
+
 ## [2.0.0] - 2015-06-01
 
   * Rename the package to `zimme:active-route`
@@ -65,6 +71,7 @@
 
   * See [git history].
 
+[2.0.1]: https://github.com/zimme/meteor-active-route/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/zimme/meteor-active-route/compare/2.0.0-rc.1...2.0.0
 [2.0.0-rc.1]: https://github.com/zimme/meteor-active-route/compare/2.0.0-beta.2...2.0.0-rc.1
 [2.0.0-beta.2]: https://github.com/zimme/meteor-active-route/compare/2.0.0-beta.1...2.0.0-beta.2
