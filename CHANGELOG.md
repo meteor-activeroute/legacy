@@ -54,11 +54,12 @@
 
   * See [git history].
 
-[2.0.0-rc.1]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-beta.2...2.0.0-rc.1
-[2.0.0-beta.2]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-beta.1...2.0.0-beta.2
-[2.0.0-beta.1]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.4...2.0.0-beta.1
-[2.0.0-alpha.4]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.3...2.0.0-alpha.4
-[2.0.0-alpha.3]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.2...2.0.0-alpha.3
-[2.0.0-alpha.2]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.1...2.0.0-alpha.2
-[2.0.0-alpha.1]: https://github.com/zimme/meteor-iron-router-active/compare/1.0.4...2.0.0-alpha.1
-[git history]: https://github.com/zimme/meteor-iron-router-active/commits
+[2.0.0]: https://github.com/zimme/meteor-active-route/compare/2.0.0-rc.1...2.0.0
+[2.0.0-rc.1]: https://github.com/zimme/meteor-active-route/compare/2.0.0-beta.2...2.0.0-rc.1
+[2.0.0-beta.2]: https://github.com/zimme/meteor-active-route/compare/2.0.0-beta.1...2.0.0-beta.2
+[2.0.0-beta.1]: https://github.com/zimme/meteor-active-route/compare/2.0.0-alpha.4...2.0.0-beta.1
+[2.0.0-alpha.4]: https://github.com/zimme/meteor-active-route/compare/2.0.0-alpha.3...2.0.0-alpha.4
+[2.0.0-alpha.3]: https://github.com/zimme/meteor-active-route/compare/2.0.0-alpha.2...2.0.0-alpha.3
+[2.0.0-alpha.2]: https://github.com/zimme/meteor-active-route/compare/2.0.0-alpha.1...2.0.0-alpha.2
+[2.0.0-alpha.1]: https://github.com/zimme/meteor-active-route/compare/1.0.4...2.0.0-alpha.1
+[git history]: https://github.com/zimme/meteor-active-route/commits

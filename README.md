@@ -1,6 +1,6 @@
-[![Gitter]](https://gitter.im/zimme/meteor-iron-router-active)
-[![Code Climate]](https://codeclimate.com/github/zimme/meteor-iron-router-active)
-[![Travis]](https://travis-ci.org/zimme/meteor-iron-router-active)
+[![Gitter]](https://gitter.im/zimme/meteor-active-route)
+[![Code Climate]](https://codeclimate.com/github/zimme/meteor-active-route)
+[![Travis]](https://travis-ci.org/zimme/meteor-active-route)
 
 # Active route helpers
 
@@ -203,7 +203,7 @@ ActiveRoute.configure({
 * `className` is an alias for `class` in the template helpers.
 * This package supports javascript's `RegExp`, [here][Regexp]'s some good info.
 
-[Code Climate]: https://img.shields.io/codeclimate/github/zimme/meteor-iron-router-active.svg
+[Code Climate]: https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg
 [Gitter]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
 [Regexp]: https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
-[Travis]: https://img.shields.io/travis/zimme/meteor-iron-router-active.svg
+[Travis]: https://img.shields.io/travis/zimme/meteor-active-route.svg
