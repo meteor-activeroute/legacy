@@ -1,8 +1,9 @@
-## [vNext]
-
-## [2.0.0-beta.2] - 2015-06-01
+## [2.0.0-rc.1] - 2015-06-01
 
   * Add tests for template helpers
+
+## [2.0.0-beta.2] - 2015-05-26
+
   * Fix links in README.md
   * Update README.md :lipstick:
 
@@ -53,7 +54,8 @@
 
   * See [git history].
 
-[2.0.0-beta.1]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-beta.1...2.0.0-beta.2
+[2.0.0-rc.1]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-beta.2...2.0.0-rc.1
+[2.0.0-beta.2]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-beta.1...2.0.0-beta.2
 [2.0.0-beta.1]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.4...2.0.0-beta.1
 [2.0.0-alpha.4]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.3...2.0.0-alpha.4
 [2.0.0-alpha.3]: https://github.com/zimme/meteor-iron-router-active/compare/2.0.0-alpha.2...2.0.0-alpha.3
