@@ -1,3 +1,14 @@
+## [2.0.0] - 2015-06-01
+
+  * Rename the package to `zimme:active-route`
+  * Adds support for `meteorhacks:flow-router`
+  * New Javascript api under the export `ActiveRoute`
+  * Adds configuration
+  * Supports more arguments for template helpers
+  * Only adds template helpers if blaze is used in project
+  * Add tests
+  * Update documentation
+
 ## [2.0.0-rc.1] - 2015-06-01
 
   * Add tests for template helpers
