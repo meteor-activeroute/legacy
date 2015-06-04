@@ -73,6 +73,29 @@ describe 'Router: iron:router', ->
 
     makeServerTests()
 
+describe 'Router: iron:router - RouteController not ready', ->
+
+  after ->
+    delete Package['iron:router']
+
+  before ->
+    Router =
+      current: ->
+
+    Package['iron:router'] = Router: Router
+
+  describe.client 'Client', ->
+
+    it 'ActiveRoute.name(/home/)', ->
+      expect ActiveRoute.name /home/
+        .to.be.false
+
+    it 'ActiveRoute.name(\'home\')', ->
+      ActiveRoute.config caseSensitive: false
+      expect ActiveRoute.name 'home'
+        .to.be.false
+      ActiveRoute.config caseSensitive: true
+
 describe 'Router: meteorhacks:flow-router', ->
 
   after ->
