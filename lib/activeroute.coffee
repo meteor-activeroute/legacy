@@ -73,7 +73,7 @@ ActiveRoute =
 
     if ir
       controller = ir.Router.current()
-      currentPath = controller?.location.get().path if controller.route
+      currentPath = controller?.location.get().path if controller?.route
 
     if fr
       fr.FlowRouter.watchPathChange()
