@@ -50,7 +50,7 @@ makeServerTests = ->
 describe 'Router: iron:router', ->
 
   after ->
-    delete Package["iron:router"]
+    delete Package['iron:router']
 
   before ->
     Router =
