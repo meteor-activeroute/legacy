@@ -25,6 +25,8 @@ share.config.set
   disabledClass: 'disabled'
 
 test = (value, pattern) ->
+  return false unless value
+
   if Match.test pattern, RegExp
     result = value.search pattern
     result = result > -1
