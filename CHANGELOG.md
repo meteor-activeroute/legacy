@@ -1,3 +1,8 @@
+## [2.0.3] - 2015-06-04
+
+  * Add guard for controller in `ActiveRoute.name` - [#26]
+  * Always check weak dependencies existence
+
 ## [2.0.2] - 2015-06-04
 
   * Add guard for controller in `ActiveRoute.path`
@@ -74,8 +79,9 @@
 
 ## Previous
 
-  * See [git history].
+  * See [git history]
 
+[2.0.3]: https://github.com/zimme/meteor-active-route/compare/2.0.2...2.0.3
 [2.0.2]: https://github.com/zimme/meteor-active-route/compare/2.0.1...2.0.2
 [2.0.1]: https://github.com/zimme/meteor-active-route/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/zimme/meteor-active-route/compare/2.0.0-rc.1...2.0.0
@@ -87,3 +93,5 @@
 [2.0.0-alpha.2]: https://github.com/zimme/meteor-active-route/compare/2.0.0-alpha.1...2.0.0-alpha.2
 [2.0.0-alpha.1]: https://github.com/zimme/meteor-active-route/compare/1.0.4...2.0.0-alpha.1
 [git history]: https://github.com/zimme/meteor-active-route/commits
+
+[#26]: https://github.com/zimme/meteor-active-route/pull/26
