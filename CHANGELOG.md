@@ -1,3 +1,8 @@
+## [2.0.2] - 2015-06-04
+
+  * Add guard for controller in `ActiveRoute.path`
+  * Document reason for package rename in README.md
+
 ## [2.0.1] - 2015-06-01
 
   * Add license and badge
