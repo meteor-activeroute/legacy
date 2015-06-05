@@ -1,5 +1,40 @@
 makeClientTests = ->
 
+  it 'ActiveRoute.config({caseSensitive: false})', ->
+    expect ActiveRoute.config caseSensitive: false
+      .to.be.undefined
+    expect ActiveRoute.name 'Home'
+      .to.be.true
+    expect ActiveRoute.path '/'
+      .to.be.true
+
+    ActiveRoute.config caseSensitive: true
+
+  it 'ActiveRoute.configure({caseSensitive: false})', ->
+    expect ActiveRoute.configure caseSensitive: false
+      .to.be.undefined
+    expect ActiveRoute.name 'Home'
+      .to.be.true
+    expect ActiveRoute.path '/'
+      .to.be.true
+
+    ActiveRoute.configure caseSensitive: true
+
+  it 'ActiveRoute.config({activeClass: \'is-selected\', disabledClass: \'is-disabled\'})', ->
+    expect ActiveRoute.config
+      activeClass: 'is-selected'
+      disabledClass: 'is-disabled'
+    .to.be.undefined
+
+    expect Blaze._globalHelpers["isActiveRoute"] 'home'
+      .to.be.a.string 'is-selected'
+    expect Blaze._globalHelpers["isNotActiveRoute"] 'notHome'
+      .to.be.a.string 'is-disabled'
+
+    ActiveRoute.config
+      activeClass: 'active'
+      disabledClass: 'disabled'
+
   it 'ActiveRoute.name(\'home\')', ->
     expect ActiveRoute.name 'home'
       .to.be.true
