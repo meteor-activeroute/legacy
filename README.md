@@ -2,6 +2,7 @@
 [![Code Climate]](https://codeclimate.com/github/zimme/meteor-active-route)
 [![Travis]](https://travis-ci.org/zimme/meteor-active-route)
 [![License]](https://github.com/zimme/meteor-collection-timestampable/blob/master/LICENSE.md)
+[![Gratipay]](https://gratipay.com/~zimme)
 
 # Active route helpers
 
@@ -211,6 +212,7 @@ ActiveRoute.configure({
 
 [Code Climate]: https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg
 [Gitter]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
+[Gratipay]: https://img.shields.io/gratipay/zimme.svg
 [License]: https://img.shields.io/badge/license-MIT-blue.svg
 [Regexp]: https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
 [Travis]: https://img.shields.io/travis/zimme/meteor-active-route.svg
