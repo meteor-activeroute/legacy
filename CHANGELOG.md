@@ -1,3 +1,8 @@
+## [2.0.4] - 2015-06-06
+
+  * Add tests for global configuration
+  * Add Gratipay badge
+
 ## [2.0.3] - 2015-06-04
 
   * Add guard for controller in `ActiveRoute.name` - [#26]
@@ -81,6 +86,7 @@
 
   * See [git history]
 
+[2.0.4]: https://github.com/zimme/meteor-active-route/compare/2.0.3...2.0.4
 [2.0.3]: https://github.com/zimme/meteor-active-route/compare/2.0.2...2.0.3
 [2.0.2]: https://github.com/zimme/meteor-active-route/compare/2.0.1...2.0.2
 [2.0.1]: https://github.com/zimme/meteor-active-route/compare/2.0.0...2.0.1
