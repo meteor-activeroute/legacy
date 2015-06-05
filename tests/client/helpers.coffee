@@ -132,4 +132,6 @@ describe 'Router: meteorhacks:flow-router', ->
   describe.client 'Client', ->
 
     makeRouteTests()
+    makeRouteTests true
     makePathTests()
+    makePathTests true
