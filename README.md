@@ -129,12 +129,12 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
 
 The following can be used by the template helpers as arguments.
 
-* Data context, Optional. `'string'`.
+* Data context, Optional. `'string'`
 * `name`, Optional. `'string'`. Only available for `isActiveRoute` and
   `isNotActiveRoute`
 * `path`, Optional. `'string'`. Only available for `isActivePath` and
-  `isNotActivePath`.
-* `regex`, Optional. `'string'` or `RegExp`.
+  `isNotActivePath`
+* `regex`, Optional. `'string'` or `RegExp`
 
 At least one of Data context, `route` or `path` need to be supplied.
 
@@ -187,10 +187,10 @@ The javascript helpers accepts `'string'` or `RegExp` as an argument.
 ## Global options
 
 * `activeClass`, Optional. Set to `'string'` to change the default
-  `class` for `isActiveRoute` and `isActivePath`.
-* `caseSensitive`, Optional. Set to `false` to make matching case-insensitive.
+  `class` for `isActiveRoute` and `isActivePath`
+* `caseSensitive`, Optional. Set to `false` to make matching case-insensitive
 * `disabledClass`, Optional. Set to `'string'` to change the default
-  `class` for `isNotActiveRoute` and `isNotActivePath`.
+  `class` for `isNotActiveRoute` and `isNotActivePath`
 
 ```js
 // Configure helpers globally
@@ -206,9 +206,9 @@ ActiveRoute.configure({
 
 * This version SHOULD be backwards-compatible with
   `zimme:iron-router-active@1.0.4`
-* `ActiveRoute.config` is an alias for `ActiveRoute.configure`.
-* `className` is an alias for `class` in the template helpers.
-* This package supports javascript's `RegExp`, [here][Regexp]'s some good info.
+* `ActiveRoute.config` is an alias for `ActiveRoute.configure`
+* `className` is an alias for `class` in the template helpers
+* This package supports javascript's `RegExp`, [here][Regexp]'s some good info
 
 [Code Climate]: https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg
 [Gitter]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
