@@ -1,3 +1,8 @@
+## [2.0.5-rc.1] - 2015-06-08
+
+  * Add regex option which makes template helpers support regex
+    in the {{isActiveRoute '^home'}} syntax.
+
 ## [2.0.4] - 2015-06-06
 
   * Add tests for global configuration
@@ -86,6 +91,7 @@
 
   * See [git history]
 
+[2.0.5-rc.1]: https://github.com/zimme/meteor-active-route/compare/2.0.4...2.0.5-rc.1
 [2.0.4]: https://github.com/zimme/meteor-active-route/compare/2.0.3...2.0.4
 [2.0.3]: https://github.com/zimme/meteor-active-route/compare/2.0.2...2.0.3
 [2.0.2]: https://github.com/zimme/meteor-active-route/compare/2.0.1...2.0.2
