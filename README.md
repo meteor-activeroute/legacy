@@ -130,7 +130,7 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
 The following can be used by the template helpers as arguments.
 
 * Data context, Optional. `'string'`.
-* `route`, Optional. `'string'`. Only available for `isActiveRoute` and
+* `name`, Optional. `'string'`. Only available for `isActiveRoute` and
   `isNotActiveRoute`
 * `path`, Optional. `'string'`. Only available for `isActivePath` and
   `isNotActivePath`.
