@@ -1,7 +1,7 @@
 ## [2.1.0] - 2015-06-08
 
   * Add `regex` option which makes template helpers support regex
-    using the {{isActiveRoute '^home'}} syntax
+    using the `{{isActiveRoute '^home'}}` syntax
 
 ## [2.0.4] - 2015-06-06
 
