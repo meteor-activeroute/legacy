@@ -35,6 +35,36 @@ makeClientTests = ->
       activeClass: 'active'
       disabledClass: 'disabled'
 
+  it 'ActiveRoute.config({caseSensitive: false, regex: true})', ->
+    expect ActiveRoute.config
+      caseSensitive: false
+      regex: true
+    .to.be.undefined
+
+    expect Blaze._globalHelpers['isActiveRoute'] '^hoMe$'
+      .to.be.a.string 'active'
+
+    expect Blaze._globalHelpers['isActivePath'] '^\/$'
+      .to.be.a.string 'active'
+
+    ActiveRoute.config
+      caseSensitive: true
+      regex: false
+
+  it 'ActiveRoute.config({regex: true})', ->
+    expect ActiveRoute.config
+      regex: true
+    .to.be.undefined
+
+    expect Blaze._globalHelpers['isActiveRoute'] '^home$'
+      .to.be.a.string 'active'
+
+    expect Blaze._globalHelpers['isActivePath'] '^\/$'
+      .to.be.a.string 'active'
+
+    ActiveRoute.config
+      regex: false
+
   it 'ActiveRoute.name(\'home\')', ->
     expect ActiveRoute.name 'home'
       .to.be.true

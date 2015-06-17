@@ -10,7 +10,11 @@ isActive = (type, inverse = false) ->
 
   (view = {hash: {}}) ->
     if Match.test view, String
-      if type is 'Path'
+      if share.config.equals 'regex', true
+        hash =
+          regex: view
+
+      else if type is 'Path'
         hash =
           path: view
 
