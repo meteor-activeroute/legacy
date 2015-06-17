@@ -191,7 +191,7 @@ The javascript helpers accepts `'string'` or `RegExp` as an argument.
 * `caseSensitive`, Optional. Set to `false` to make matching case-insensitive
 * `disabledClass`, Optional. Set to `'string'` to change the default
   `class` for `isNotActiveRoute` and `isNotActivePath`
-* `regex`, Optional. Set to `true` to make tempalte helpers use regex matching
+* `regex`, Optional. Set to `true` to make template helpers use regex matching
   with the following syntax, `{{isActiveRoute '^home'}}`
 
 ```js
