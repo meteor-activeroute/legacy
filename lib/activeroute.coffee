@@ -43,7 +43,7 @@ test = (value, pattern) ->
 ActiveRoute =
 
   config: ->
-    @configure.apply this, arguments
+    @configure.apply @, arguments
 
   configure: (options) ->
     return if Meteor.isServer
