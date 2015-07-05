@@ -10,21 +10,23 @@ isActive = (type, inverse = false) ->
 
   (view = {hash: {}}) ->
     if Match.test view, String
+      hash = _.extend arguments[1]?.hash, @, {}
       if share.config.equals 'regex', true
-        hash =
-          regex: view
+        hash.regex = view
 
       else if type is 'Path'
-        hash =
-          path: view
+        hash.path = view
 
       else
-        hash =
-          name: view
+        hash.name = view
 
       view = hash: hash
 
-    pattern =
+    else if not Match.test view, Spacebars.kw
+      view =
+        hash: _.extend view, @, {}
+
+    pattern = Match.ObjectIncluding
       class: Match.Optional String
       className: Match.Optional String
       regex: Match.Optional Match.OneOf RegExp, String
