@@ -1,5 +1,4 @@
-unless Package.templating
-  return
+return unless Package.templating
 
 Template = Package.templating.Template
 
@@ -8,23 +7,27 @@ isActive = (type, inverse = false) ->
   helperName += 'Not' if inverse
   helperName += "Active#{type}"
 
-  (view = {hash: {}}) ->
-    if Match.test view, String
-      hash = _.extend arguments[1]?.hash, @, {}
+  (options = {}, attributes = {}) ->
+    if Match.test options, Spacebars.kw
+      options = options.hash
+
+    if Match.test attributes, Spacebars.kw
+      attributes = attributes.hash
+
+    if Match.test options, String
       if share.config.equals 'regex', true
-        hash.regex = view
+        options =
+          regex: options
 
       else if type is 'Path'
-        hash.path = view
+        options =
+          path: options
 
       else
-        hash.name = view
+        options =
+          name: options
 
-      view = hash: hash
-
-    else if not Match.test view, Spacebars.kw
-      view =
-        hash: _.extend view, @, {}
+    options = _.defaults attributes, options, @
 
     pattern = Match.ObjectIncluding
       class: Match.Optional String
@@ -33,11 +36,11 @@ isActive = (type, inverse = false) ->
       name: Match.Optional String
       path: Match.Optional String
 
-    check view.hash, pattern
+    check options, pattern
 
-    {regex, name, path} = view.hash
+    {regex, name, path} = options
 
-    className = view.hash.class ? view.hash.className
+    className = options.class ? options.className
 
     if type is 'Path'
       name = null
