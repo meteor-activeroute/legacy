@@ -4,9 +4,9 @@ unless Package.templating
 Template = Package.templating.Template
 
 isActive = (type, inverse = false) ->
-  name = 'is'
-  name += 'Not' if inverse
-  name += "Active#{type}"
+  helperName = 'is'
+  helperName += 'Not' if inverse
+  helperName += "Active#{type}"
 
   (view = {hash: {}}) ->
     if Match.test view, String
@@ -44,9 +44,11 @@ isActive = (type, inverse = false) ->
       path = null
 
     unless regex or name or path
-      t = type.toLowerCase()
-      throw new Error "Invalid argument, #{name} takes \"#{t}\", " +
+      t = if type is 'Route' then 'name' else type
+      t = t.toLowerCase()
+      console.error "Invalid argument, #{helperName} takes \"#{t}\", " +
         "#{t}=\"#{t}\" or regex=\"regex\""
+      return false
 
     if Match.test regex, String
       if share.config.equals 'caseSensitive', false
