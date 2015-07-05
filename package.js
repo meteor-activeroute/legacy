@@ -32,9 +32,12 @@ Package.onTest(function(api) {
   api.versionsFrom('1.0');
 
   api.use([
+    'check',
     'coffeescript',
     'mike:mocha-package@0.5.7',
     'practicalmeteor:chai@1.9.2_3',
+    'reactive-dict',
+    'underscore',
     'zimme:active-route'
   ]);
 
