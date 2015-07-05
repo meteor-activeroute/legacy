@@ -11,37 +11,66 @@ makeRouteTests = (inverse = false) ->
       .to.be.a.string result
 
   it "{{is#{inverse}ActiveRoute name='#{routeName}'}}", ->
-    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] hash: name: routeName
-      .to.be.a.string result
+    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] Spacebars.kw
+      name: routeName
+    .to.be.a.string result
 
   it "{{is#{inverse}ActiveRoute class='#{cls}' name='#{routeName}'}}", ->
-    options =
-      hash:
-        class: cls
-        name: routeName
+    options = Spacebars.kw
+      class: cls
+      name: routeName
 
     expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] options
-      .to.be.a.string if inverse then 'is-disabled' else 'is-selected'
+      .to.be.a.string cls
 
   it "{{is#{inverse}ActiveRoute className='#{cls}' name='#{routeName}'}}", ->
-
-    options =
-      hash:
-        className: cls
-        name: routeName
+    options = Spacebars.kw
+      className: cls
+      name: routeName
 
     expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] options
       .to.be.a.string if inverse then 'is-disabled' else 'is-selected'
 
   it "{{is#{inverse}ActiveRoute regex='#{routeName}'}}", ->
-    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"]
-      hash:
-        regex: routeName
+    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] Spacebars.kw
+      regex: routeName
     .to.be.a.string result
 
   it "{{is#{inverse}ActiveRoute '#{routeName}'}}", ->
     expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] inverseRouteName
       .to.be.false
+
+  it "{{is#{inverse}ActiveRoute '#{routeName}' class='#{cls}'}}", ->
+    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] routeName,
+      Spacebars.kw
+        class: cls
+    .to.be.a.string cls
+
+  it "{{is#{inverse}ActiveRoute options}}", ->
+    options =
+      name: routeName
+
+    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] options
+      .to.be.a.string result
+
+  it "{{#with options}}{{is#{inverse}ActiveRoute}}{{/with}}", ->
+    options =
+      name: routeName
+
+    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"].apply options
+      .to.be.a.string result
+
+  it "{{#with options}}{{is#{inverse}ActiveRoute moreOptions class='#{cls}'}}" +
+  "{{/with}}", ->
+    options =
+      name: 'notHome'
+
+    moreOptions =
+      name: routeName
+
+    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"].call options,
+      moreOptions, Spacebars.kw class: cls
+    .to.be.a.string cls
 
 makePathTests = (inverse = false) ->
 
@@ -58,34 +87,67 @@ makePathTests = (inverse = false) ->
       .to.be.a.string result
 
   it "{{is#{inverse}ActivePath path='#{path}'}}", ->
-    expect Blaze._globalHelpers["is#{inverse}ActivePath"] hash: path: path
-      .to.be.a.string result
+    expect Blaze._globalHelpers["is#{inverse}ActivePath"] Spacebars.kw
+      path: path
+    .to.be.a.string result
 
   it "{{is#{inverse}ActivePath class='#{cls}' path='#{path}'}}", ->
-    options =
-      hash:
-        class: cls
-        path: path
+    options = Spacebars.kw
+      class: cls
+      path: path
 
     expect Blaze._globalHelpers["is#{inverse}ActivePath"] options
-      .to.be.a.string if inverse then 'is-disabled' else 'is-selected'
+      .to.be.a.string cls
 
   it "{{is#{inverse}ActivePath className='#{cls}' path='#{path}'}}", ->
-    options =
-      hash:
-        className: cls
-        path: path
+    options = Spacebars.kw
+      className: cls
+      path: path
 
     expect Blaze._globalHelpers["is#{inverse}ActivePath"] options
-      .to.be.a.string if inverse then 'is-disabled' else 'is-selected'
+      .to.be.a.string cls
 
   it "{{is#{inverse}ActivePath regex='#{regexPath}'}}", ->
-    expect Blaze._globalHelpers["is#{inverse}ActivePath"] hash: regex: regexPath
-      .to.be.a.string result
+    expect Blaze._globalHelpers["is#{inverse}ActivePath"] Spacebars.kw
+      regex: regexPath
+    .to.be.a.string result
 
   it "{{is#{inverse}ActivePath '#{inversePath}'}}", ->
-    expect Blaze._globalHelpers["is#{inverse}ActivePath"] hash: path: inversePath
-      .to.be.false
+    expect Blaze._globalHelpers["is#{inverse}ActivePath"] Spacebars.kw
+      path: inversePath
+    .to.be.false
+
+  it "{{is#{inverse}ActivePath '#{path}' class='#{cls}'}}", ->
+    expect Blaze._globalHelpers["is#{inverse}ActivePath"] path,
+      Spacebars.kw
+        class: cls
+    .to.be.a.string cls
+
+  it "{{is#{inverse}ActivePath options}}", ->
+    options =
+      path: path
+
+    expect Blaze._globalHelpers["is#{inverse}ActivePath"] options
+      .to.be.a.string result
+
+  it "{{#with options}}{{is#{inverse}ActivePath}}{{/with}}", ->
+    options =
+      path: path
+
+    expect Blaze._globalHelpers["is#{inverse}ActivePath"].apply options
+      .to.be.a.string result
+
+  it "{{#with options}}{{is#{inverse}ActivePath moreOptions class='#{cls}'}}" +
+  "{{/with}}", ->
+    options =
+      path: 'notHome'
+
+    moreOptions =
+      path: path
+
+    expect Blaze._globalHelpers["is#{inverse}ActivePath"].call options,
+      moreOptions, Spacebars.kw class: cls
+    .to.be.a.string cls
 
 describe 'Router: iron:router', ->
 

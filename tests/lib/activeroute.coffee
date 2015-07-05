@@ -20,7 +20,8 @@ makeClientTests = ->
 
     ActiveRoute.configure caseSensitive: true
 
-  it 'ActiveRoute.config({activeClass: \'is-selected\', disabledClass: \'is-disabled\'})', ->
+  it 'ActiveRoute.config({activeClass: \'is-selected\', disabledClass: ' +
+  '\'is-disabled\'})', ->
     expect ActiveRoute.config
       activeClass: 'is-selected'
       disabledClass: 'is-disabled'
