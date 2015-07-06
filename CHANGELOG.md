@@ -1,4 +1,8 @@
-## [Next]
+## [2.2.0] - 2015-07-06
+  * Update documentation
+  * Add support for `{{isActiveRoute 'home' class='active'}}`,
+    `{{isActiveRoute options}}` and `{{#with options}}{{isActiveRoute}}{{/with}}`
+    syntax
   * Update links in README.md
   * Fix code block in CHANGELOG.md
 
@@ -95,7 +99,7 @@
 
   * See [git history]
 
-[Next]: https://github.com/zimme/meteor-active-route/compare/2.1.0...HEAD
+[2.2.0]: https://github.com/zimme/meteor-active-route/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/zimme/meteor-active-route/compare/2.0.4...2.1.0
 [2.0.4]: https://github.com/zimme/meteor-active-route/compare/2.0.3...2.0.4
 [2.0.3]: https://github.com/zimme/meteor-active-route/compare/2.0.2...2.0.3
