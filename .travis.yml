@@ -7,4 +7,4 @@ before_install:
   - "curl https://install.meteor.com | /bin/sh"
 
 script:
-  - "meteor test-packages --velocity --driver-package velocity:console-reporter ./"
+  - "meteor test-packages --velocity --driver-package respondly:test-reporter ./"
