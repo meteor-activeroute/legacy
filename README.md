@@ -54,6 +54,7 @@ Returns either a configurable `string`, which defaults to `'active'`, or
 {{/if}}
 
 <li class="{{isActiveRoute class='is-selected' name='home'}}">...</li>
+<li class="{{isActiveRoute 'home' class='is-selected'}}">...</li>
 ```
 
 #### isActivePath
@@ -76,6 +77,7 @@ Returns either a configurable `string`, which defaults to `'active'`, or
 {{/if}}
 
 <li class="{{isActivePath class='is-selected' path='/home'}}">...</li>
+<li class="{{isActivePath '/home' class='is-selected'}}">...</li>
 ```
 
 #### isNotActiveRoute
@@ -99,7 +101,8 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
   </span>
 {{/if}}
 
-<li class="{{isActiveRoute class='is-disabled' name='home'}}">...</li>
+<li class="{{isNotActiveRoute class='is-disabled' name='home'}}">...</li>
+<li class="{{isNotActiveRoute 'home' class='is-disabled'}}">...</li>
 ```
 
 #### isNotActivePath
@@ -121,14 +124,15 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
   <span>Show only if current route's path doesn't begin with '/products'</span>
 {{/if}}
 
-<li class="{{isActivePath class='is-disabled' path='/home'}}">...</li>
+<li class="{{isNotActivePath class='is-disabled' path='/home'}}">...</li>
+<li class="{{isNotActivePath '/home' class='is-disabled'}}">...</li>
 ```
 
 ### Arguments
 
 The following can be used by the template helpers as arguments.
 
-* Data context, Optional. `'string'`
+* Data context, Optional. `'string'` or `Object` with `name`, `path` or `regex`
 * `name`, Optional. `'string'`. Only available for `isActiveRoute` and
   `isNotActiveRoute`
 * `path`, Optional. `'string'`. Only available for `isActivePath` and
@@ -206,8 +210,7 @@ ActiveRoute.configure({
 
 ## Notes
 
-* This version SHOULD be backwards-compatible with
-  `zimme:iron-router-active@1.0.4`
+* SHOULD be backwards-compatible with `zimme:iron-router-active@1.0.4`
 * `ActiveRoute.config` is an alias for `ActiveRoute.configure`
 * `className` is an alias for `class` in the template helpers
 * This package supports javascript's `RegExp`, [here][Regexp]'s some good info
