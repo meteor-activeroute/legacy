@@ -10,7 +10,7 @@ the currently active route.
 
 ## Package rename
 
-Because of support for `meteorhacks:flow-router` I decided to rename
+Because of support for `meteorhacks:flow-router` I've decided to rename
 `zimme:iron-router-active` to `zimme:active-route` with version `2.0.0`.
 
 ## Install
@@ -21,12 +21,11 @@ meteor add zimme:active-route
 
 ## Supported routers
 
-The currently supported routes are
+* [`iron:router`]
+* [`meteorhacks:flow-router`]
 
-* [`iron:router`](https://atmospherejs.com/iron/router)
-* [`meteorhacks:flow-router`](https://atmospherejs.com/meteorhacks/flow-router)
-
-If both routers are installed `iron:router` checks will take precedence.
+If both routers are installed, the package will match against `iron:router`
+routes first.
 
 ## Template helpers
 
@@ -39,7 +38,7 @@ Basic usage examples.
 Template helper to check if the supplied route name matches the currently active
 route's name.
 
-Returns either a configurable `string`, which defaults to `'active'`, or
+Returns either a configurable `String`, which defaults to `'active'`, or
 `false`.
 
 ```html
@@ -62,7 +61,7 @@ Returns either a configurable `string`, which defaults to `'active'`, or
 Template helper to check if the supplied path matches the currently active
 route's path.
 
-Returns either a configurable `string`, which defaults to `'active'`, or
+Returns either a configurable `String`, which defaults to `'active'`, or
 `false`.
 
 ```html
@@ -85,7 +84,7 @@ Returns either a configurable `string`, which defaults to `'active'`, or
 Template helper to check if the supplied route name doesn't match the currently
 active route's name.
 
-Returns either a configurable `string`, which defaults to `'disabled'`, or
+Returns either a configurable `String`, which defaults to `'disabled'`, or
 `false`.
 
 ```html
@@ -110,7 +109,7 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
 Template helper to check if the supplied path doesn't match the currently active
 route's path.
 
-Returns either a configurable `string`, which defaults to `'disabled'`, or
+Returns either a configurable `String`, which defaults to `'disabled'`, or
 `false`.
 
 ```html
@@ -132,12 +131,12 @@ Returns either a configurable `string`, which defaults to `'disabled'`, or
 
 The following can be used by the template helpers as arguments.
 
-* Data context, Optional. `'string'` or `Object` with `name`, `path` or `regex`
-* `name`, Optional. `'string'`. Only available for `isActiveRoute` and
+* Data context, Optional. `String` or `Object` with `name`, `path` or `regex`
+* `name`, Optional. `String`. Only available for `isActiveRoute` and
   `isNotActiveRoute`
-* `path`, Optional. `'string'`. Only available for `isActivePath` and
+* `path`, Optional. `String`. Only available for `isActivePath` and
   `isNotActivePath`
-* `regex`, Optional. `'string'` or `RegExp`
+* `regex`, Optional. `String` or `RegExp`
 
 At least one of Data context, `route` or `path` need to be supplied.
 
@@ -185,14 +184,14 @@ ActiveRoute.path(/\/edit$/i);
 
 ### Arguments
 
-The javascript helpers accepts `'string'` or `RegExp` as an argument.
+The javascript helpers accepts `String` or `RegExp` as an argument.
 
 ## Global options
 
-* `activeClass`, Optional. Set to `'string'` to change the default
+* `activeClass`, Optional. Set to `String` to change the default
   `class` for `isActiveRoute` and `isActivePath`
 * `caseSensitive`, Optional. Set to `false` to make matching case-insensitive
-* `disabledClass`, Optional. Set to `'string'` to change the default
+* `disabledClass`, Optional. Set to `String` to change the default
   `class` for `isNotActiveRoute` and `isNotActivePath`
 * `regex`, Optional. Set to `true` to make template helpers use regex matching
   with the following syntax, `{{isActiveRoute '^home'}}`
@@ -212,15 +211,17 @@ ActiveRoute.configure({
 
 * SHOULD be backwards-compatible with `zimme:iron-router-active@1.0.4`
 * `ActiveRoute.config` is an alias for `ActiveRoute.configure`
-* `className` is an alias for `class` in the template helpers
+* `className` is an alias for `class` in template helpers
 * This package supports javascript's `RegExp`, [here][Regexp]'s some good info
 
 [Code Climate]: https://codeclimate.com/github/zimme/meteor-active-route
 [Code Climate Badge]: https://img.shields.io/codeclimate/github/zimme/meteor-active-route.svg
 [Gitter]: https://gitter.im/zimme/meteor-active-route
 [Gitter Badge]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
+[`iron:router`]: https://atmospherejs.com/iron/router
 [License]: https://github.com/zimme/meteor-collection-timestampable/blob/master/LICENSE.md
 [License Badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[`meteorhacks:flow-router`]: https://atmospherejs.com/meteorhacks/flow-router
 [Regexp]: https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
 [Travis]: https://travis-ci.org/zimme/meteor-active-route
 [Travis Badge]: https://img.shields.io/travis/zimme/meteor-active-route.svg
