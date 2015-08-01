@@ -7,7 +7,7 @@ checkArgument = (arg) ->
     throw new Error errorMessages.invalidArgument
 
 checkRouterPackages = ->
-  fr = Package['meteorhacks:flow-router']
+  fr = Package['kadira:flow-router'] ? Package['meteorhacks:flow-router']
   ir = Package['iron:router']
   throw new Error errorMessages.noSupportedRouter unless ir or fr
 

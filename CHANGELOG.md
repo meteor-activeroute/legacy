@@ -1,3 +1,7 @@
+## [2.3.0] - 2015-07-31
+
+  * Support `kadira:flow-router@2.0.0` - [#36, #37, #38]
+
 ## [2.2.0] - 2015-07-06
   * Update documentation
   * Add support for `{{isActiveRoute 'home' class='active'}}`,
@@ -116,3 +120,6 @@
 [git history]: https://github.com/zimme/meteor-active-route/commits
 
 [#26]: https://github.com/zimme/meteor-active-route/pull/26
+[#36]: https://github.com/zimme/meteor-active-route/issue/36
+[#37]: https://github.com/zimme/meteor-active-route/pull/37
+[#38]: https://github.com/zimme/meteor-active-route/pull/38

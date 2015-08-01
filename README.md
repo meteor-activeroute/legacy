@@ -10,7 +10,7 @@ the currently active route.
 
 ## Package rename
 
-Because of support for `meteorhacks:flow-router` I've decided to rename
+Because of support for `kadira:flow-router` I've decided to rename
 `zimme:iron-router-active` to `zimme:active-route` with version `2.0.0`.
 
 ## Install
@@ -22,10 +22,11 @@ meteor add zimme:active-route
 ## Supported routers
 
 * [`iron:router`]
-* [`meteorhacks:flow-router`]
+* [`kadira:flow-router`]
+* [`meteorhacks:flow-router`] (Deprecated)
 
-If both routers are installed, the package will match against `iron:router`
-routes first.
+If multiple routers are installed, the package will match against `iron:router`
+routes first, then `kadira:flow-router` and lastly `meteorhacks:flow-router`.
 
 ## Template helpers
 
@@ -219,6 +220,7 @@ ActiveRoute.configure({
 [Gitter]: https://gitter.im/zimme/meteor-active-route
 [Gitter Badge]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
 [`iron:router`]: https://atmospherejs.com/iron/router
+[`kadira:flow-router`]: https://atmospherejs.com/kadira/flow-router
 [License]: https://github.com/zimme/meteor-collection-timestampable/blob/master/LICENSE.md
 [License Badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [`meteorhacks:flow-router`]: https://atmospherejs.com/meteorhacks/flow-router

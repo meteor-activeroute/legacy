@@ -2,7 +2,7 @@ Package.describe({
   git: 'https://github.com/zimme/meteor-active-route.git',
   name: 'zimme:active-route',
   summary: 'Active route helpers',
-  version: '2.2.0'
+  version: '2.3.0'
 });
 
 Package.onUse(function(api) {
@@ -16,6 +16,7 @@ Package.onUse(function(api) {
   ]);
 
   api.use([
+    'kadira:flow-router@2.0.0',
     'meteorhacks:flow-router@1.8.0',
     'iron:router@1.0.0',
     'templating'

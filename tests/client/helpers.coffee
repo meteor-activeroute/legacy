@@ -197,3 +197,27 @@ describe 'Router: meteorhacks:flow-router', ->
     makeRouteTests true
     makePathTests()
     makePathTests true
+
+describe 'Router: kadira:flow-router', ->
+
+  after ->
+    delete Package['kadira:flow-router']
+
+  before ->
+    Router =
+      current: ->
+        path: '/'
+
+      getRouteName: ->
+        'home'
+
+      watchPathChange: ->
+
+    Package['kadira:flow-router'] = FlowRouter: Router
+
+  describe.client 'Client', ->
+
+    makeRouteTests()
+    makeRouteTests true
+    makePathTests()
+    makePathTests true
