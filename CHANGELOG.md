@@ -1,3 +1,9 @@
+## [2.3.1] - 2015-08-18
+
+  * Remove data context inheritance, caused unexpected problems. The following
+    kind of inheritance won't work with this change.
+    `{{#with options}}{{isActiveRoute}}{{/with}}` - [#35]
+
 ## [2.3.0] - 2015-07-31
 
   * Support `kadira:flow-router@2.0.0` - [#36, #37, #38]
@@ -103,6 +109,8 @@
 
   * See [git history]
 
+[2.3.1]: https://github.com/zimme/meteor-active-route/compare/2.3.0...2.3.1
+[2.3.0]: https://github.com/zimme/meteor-active-route/compare/2.2.0...2.3.0
 [2.2.0]: https://github.com/zimme/meteor-active-route/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/zimme/meteor-active-route/compare/2.0.4...2.1.0
 [2.0.4]: https://github.com/zimme/meteor-active-route/compare/2.0.3...2.0.4
@@ -120,6 +128,7 @@
 [git history]: https://github.com/zimme/meteor-active-route/commits
 
 [#26]: https://github.com/zimme/meteor-active-route/pull/26
+[#35]: https://github.com/zimme/meteor-active-route/pull/35
 [#36]: https://github.com/zimme/meteor-active-route/issue/36
 [#37]: https://github.com/zimme/meteor-active-route/pull/37
 [#38]: https://github.com/zimme/meteor-active-route/pull/38

@@ -53,25 +53,6 @@ makeRouteTests = (inverse = false) ->
     expect Blaze._globalHelpers["is#{inverse}ActiveRoute"] options
       .to.be.a.string result
 
-  it "{{#with options}}{{is#{inverse}ActiveRoute}}{{/with}}", ->
-    options =
-      name: routeName
-
-    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"].apply options
-      .to.be.a.string result
-
-  it "{{#with options}}{{is#{inverse}ActiveRoute moreOptions class='#{cls}'}}" +
-  "{{/with}}", ->
-    options =
-      name: 'notHome'
-
-    moreOptions =
-      name: routeName
-
-    expect Blaze._globalHelpers["is#{inverse}ActiveRoute"].call options,
-      moreOptions, Spacebars.kw class: cls
-    .to.be.a.string cls
-
 makePathTests = (inverse = false) ->
 
   inverse = if inverse then 'Not' else ''
@@ -129,25 +110,6 @@ makePathTests = (inverse = false) ->
 
     expect Blaze._globalHelpers["is#{inverse}ActivePath"] options
       .to.be.a.string result
-
-  it "{{#with options}}{{is#{inverse}ActivePath}}{{/with}}", ->
-    options =
-      path: path
-
-    expect Blaze._globalHelpers["is#{inverse}ActivePath"].apply options
-      .to.be.a.string result
-
-  it "{{#with options}}{{is#{inverse}ActivePath moreOptions class='#{cls}'}}" +
-  "{{/with}}", ->
-    options =
-      path: 'notHome'
-
-    moreOptions =
-      path: path
-
-    expect Blaze._globalHelpers["is#{inverse}ActivePath"].call options,
-      moreOptions, Spacebars.kw class: cls
-    .to.be.a.string cls
 
 describe 'Router: iron:router', ->
 

@@ -27,7 +27,7 @@ isActive = (type, inverse = false) ->
         options =
           name: options
 
-    options = _.defaults attributes, options, @
+    options = _.defaults attributes, options
 
     pattern = Match.ObjectIncluding
       class: Match.Optional String
