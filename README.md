@@ -42,7 +42,7 @@ route's name.
 Returns either a configurable `String`, which defaults to `'active'`, or
 `false`.
 
-```html
+```handlebars
 <li class="{{isActiveRoute 'home'}}">...</li>
 <li class="{{isActiveRoute name='home'}}">...</li>
 <li class="{{isActiveRoute regex='home|dashboard'}}">...</li>
@@ -65,7 +65,7 @@ route's path.
 Returns either a configurable `String`, which defaults to `'active'`, or
 `false`.
 
-```html
+```handlebars
 <li class="{{isActivePath '/home'}}">...</li>
 <li class="{{isActivePath path='/home'}}">...</li>
 <li class="{{isActivePath regex='home|dashboard'}}">...</li>
@@ -88,7 +88,7 @@ active route's name.
 Returns either a configurable `String`, which defaults to `'disabled'`, or
 `false`.
 
-```html
+```handlebars
 <li class="{{isNotActiveRoute 'home'}}">...</li>
 <li class="{{isNotActiveRoute name='home'}}">...</li>
 <li class="{{isNotActiveRoute regex='home|dashboard'}}">...</li>
@@ -113,7 +113,7 @@ route's path.
 Returns either a configurable `String`, which defaults to `'disabled'`, or
 `false`.
 
-```html
+```handlebars
 <li class="{{isNotActivePath '/home'}}">...</li>
 <li class="{{isNotActivePath path='/home'}}">...</li>
 <li class="{{isNotActivePath regex='home|dashboard'}}">...</li>
