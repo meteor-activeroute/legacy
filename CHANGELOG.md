@@ -3,6 +3,7 @@
   * Remove data context inheritance, caused unexpected problems. The following
     kind of inheritance won't work with this change.
     `{{#with options}}{{isActiveRoute}}{{/with}}` - [#35]
+  * Use container based Travis-CI
   * Handlebars highlighting in code blocks
 
 ## [2.3.0] - 2015-07-31
