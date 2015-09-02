@@ -1,3 +1,7 @@
+## [2.3.2] - 2015-08-19
+
+  * Use `setDefault` on reactive-dict to not overwrite migrated settings.
+
 ## [2.3.1] - 2015-08-18
 
   * Remove data context inheritance, it caused unexpected problems. The

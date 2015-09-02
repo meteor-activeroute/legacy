@@ -19,7 +19,7 @@ errorMessages =
   invalidArgument: 'Invalid argument, must be String or RegExp.'
 
 share.config = new ReactiveDict 'activeRouteConfig'
-share.config.set
+share.config.setDefault
   activeClass: 'active'
   caseSensitive: true
   disabledClass: 'disabled'
