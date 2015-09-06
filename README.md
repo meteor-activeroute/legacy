@@ -221,7 +221,7 @@ ActiveRoute.configure({
 [Gitter Badge]: https://img.shields.io/badge/gitter-join_chat-brightgreen.svg
 [`iron:router`]: https://atmospherejs.com/iron/router
 [`kadira:flow-router`]: https://atmospherejs.com/kadira/flow-router
-[License]: https://github.com/zimme/meteor-collection-timestampable/blob/master/LICENSE.md
+[License]: https://github.com/zimme/meteor-active-route/blob/master/LICENSE.md
 [License Badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [`meteorhacks:flow-router`]: https://atmospherejs.com/meteorhacks/flow-router
 [Regexp]: https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
