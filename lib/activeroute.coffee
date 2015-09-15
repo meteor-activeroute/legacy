@@ -6,6 +6,12 @@ checkRouteOrPath = (arg) ->
   catch error
     throw new Error errorMessages.invalidRouteNameArgument
 
+checkParams = (arg) ->
+  try
+    check arg, Object
+  catch error
+    throw new Error errorMessages.invalidRouteParamsArgument
+
 checkRouterPackages = ->
   fr = Package['kadira:flow-router'] ? Package['meteorhacks:flow-router']
   ir = Package['iron:router']
@@ -17,6 +23,7 @@ errorMessages =
     'iron:router or meteorhacks:flow-router.'
 
   invalidRouteNameArgument: 'Invalid argument, must be String or RegExp.'
+  invalidRouteParamsArgument: 'Invalid arguemnt, must be Object.'
 
 share.config = new ReactiveDict 'activeRouteConfig'
 share.config.setDefault
@@ -51,20 +58,33 @@ ActiveRoute =
     share.config.set options
     return
 
-  name: (routeName) ->
+  name: (routeName, routeParams = {}) ->
     checkRouterPackages()
 
     return if Meteor.isServer
 
     checkRouteOrPath routeName
+    checkParams routeParams
 
     if ir
-      currentRouteName = ir.Router.current()?.route?.getName?()
+      if not _.isEmpty(routeParams) and Match.test routeName, String
+        controller = ir.Router.current()
+        currentPath = controller?.location.get().path if controller?.route
+        path = ir.Router.path routeName, routeParams
+
+      else
+        currentRouteName = ir.Router.current()?.route?.getName?()
 
     if fr
-      currentRouteName ?= fr.FlowRouter.getRouteName()
+      if not _.isEmpty(routeParams) and Match.test routeName, String
+        fr.FlowRouter.watchPathChange()
+        currentPath ?= fr.FlowRouter.current().path
+        path ?= fr.FlowRouter.path routeName, routeParams
 
-    test currentRouteName, routeName
+      else
+        currentRouteName ?= fr.FlowRouter.getRouteName()
+
+    test currentPath or currentRouteName, path or routeName
 
   path: (path) ->
     checkRouterPackages()
