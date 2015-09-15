@@ -75,7 +75,11 @@ isActive = (type, inverse = false) ->
       result = ActiveRoute.path regex
 
     else
-      result = ActiveRoute.name regex
+      options = _.defaults attributes, attributes.data
+      result = ActiveRoute.name regex, _.omit options, [
+        'class', 'className', 'data'
+        'regex', 'name', 'path'
+      ]
 
     result = not result if inverse
 
