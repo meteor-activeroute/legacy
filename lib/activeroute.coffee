@@ -1,10 +1,10 @@
 fr = ir = null
 
-checkArgument = (arg) ->
+checkRouteOrPath = (arg) ->
   try
     check arg, Match.OneOf RegExp, String
   catch error
-    throw new Error errorMessages.invalidArgument
+    throw new Error errorMessages.invalidRouteNameArgument
 
 checkRouterPackages = ->
   fr = Package['kadira:flow-router'] ? Package['meteorhacks:flow-router']
@@ -16,7 +16,7 @@ errorMessages =
     'No supported router installed. Please install ' +
     'iron:router or meteorhacks:flow-router.'
 
-  invalidArgument: 'Invalid argument, must be String or RegExp.'
+  invalidRouteNameArgument: 'Invalid argument, must be String or RegExp.'
 
 share.config = new ReactiveDict 'activeRouteConfig'
 share.config.setDefault
@@ -56,7 +56,7 @@ ActiveRoute =
 
     return if Meteor.isServer
 
-    checkArgument routeName
+    checkRouteOrPath routeName
 
     if ir
       currentRouteName = ir.Router.current()?.route?.getName?()
@@ -71,7 +71,7 @@ ActiveRoute =
 
     return if Meteor.isServer
 
-    checkArgument path
+    checkRouteOrPath path
 
     if ir
       controller = ir.Router.current()
