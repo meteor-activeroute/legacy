@@ -162,7 +162,7 @@ ActiveRoute.name(new RegExp('home|dashboard'));
 // Returns true if current route's name contains 'home' or 'dashboard'.
 
 ActiveRoute.name(/^products/);
-// Returns true if current route's name starts with 'home'.
+// Returns true if current route's name starts with 'products'.
 ```
 
 #### ActiveRoute.path
