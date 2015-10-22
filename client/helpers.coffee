@@ -1,6 +1,7 @@
-return unless Package.templating
+return unless Package.templating and Package.spacebars
 
 Template = Package.templating.Template
+Spacebars = Package.spacebars.Spacebars
 
 isActive = (type, inverse = false) ->
   helperName = 'is'

@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.0');
+  api.versionsFrom(['1.0', '1.2']);
 
   api.use([
     'check',
@@ -20,7 +20,7 @@ Package.onUse(function(api) {
     'meteorhacks:flow-router@1.8.0',
     'iron:router@1.0.0',
     'templating'
-  ], ['client', 'server'], {weak: true});
+  ], {weak: true});
 
   api.export('ActiveRoute');
 
@@ -30,15 +30,19 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.versionsFrom('1.0');
+  api.versionsFrom(['1.0', '1.2']);
 
   api.use([
     'check',
     'coffeescript',
+    'reactive-dict',
+    'templating',
+    'underscore'
+  ]);
+
+  api.use([
     'mike:mocha-package@0.5.7',
     'practicalmeteor:chai@1.9.2_3',
-    'reactive-dict',
-    'underscore',
     'zimme:active-route'
   ]);
 
