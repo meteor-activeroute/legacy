@@ -46,7 +46,10 @@ Package.onTest(function(api) {
     'zimme:active-route'
   ]);
 
-  api.addFiles('tests/lib/activeroute.coffee');
+  api.addFiles([
+    'tests/client/activeroute.coffee',
+    'tests/client/helpers.coffee'
+  ], 'client');
 
-  api.addFiles('tests/client/helpers.coffee', 'client');
+  api.addFiles('tests/server/activeroute.coffee', 'server');
 });

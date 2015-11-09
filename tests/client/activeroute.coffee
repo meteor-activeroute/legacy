@@ -92,27 +92,6 @@ makeClientTests = ->
 
   return
 
-makeServerTests = ->
-
-  describe 'Should always return undefined', ->
-
-    it 'ActiveRoute.config', ->
-      expect ActiveRoute.config caseSensitive: false
-        .to.be.undefined
-
-    it 'ActiveRoute.configure', ->
-      expect ActiveRoute.configure caseSensitive: false
-        .to.be.undefined
-
-    it 'ActiveRoute.name', ->
-      expect ActiveRoute.name 'home'
-        .to.be.undefined
-
-    it 'ActiveRoute.path', ->
-      expect ActiveRoute.path '/'
-
-  return
-
 describe 'Router: iron:router', ->
 
   after ->
@@ -131,13 +110,9 @@ describe 'Router: iron:router', ->
 
     Package['iron:router'] = Router: Router
 
-  describe.client 'Client', ->
+  describe 'Client', ->
 
     makeClientTests()
-
-  describe.server 'Server', ->
-
-    makeServerTests()
 
 describe 'Router: iron:router - RouteController not ready', ->
 
@@ -150,7 +125,7 @@ describe 'Router: iron:router - RouteController not ready', ->
 
     Package['iron:router'] = Router: Router
 
-  describe.client 'Client', ->
+  describe 'Client', ->
 
     it 'ActiveRoute.name(/home/)', ->
       expect ActiveRoute.name /home/
@@ -179,7 +154,7 @@ describe 'Router: meteorhacks:flow-router', ->
 
     Package['meteorhacks:flow-router'] = FlowRouter: Router
 
-  describe.client 'Client', ->
+  describe 'Client', ->
 
     makeClientTests()
 
@@ -200,6 +175,6 @@ describe 'Router: kadira:flow-router', ->
 
     Package['kadira:flow-router'] = FlowRouter: Router
 
-  describe.client 'Client', ->
+  describe 'Client', ->
 
     makeClientTests()

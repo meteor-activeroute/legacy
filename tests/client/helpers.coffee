@@ -129,7 +129,7 @@ describe 'Router: iron:router', ->
 
     Package['iron:router'] = Router: Router
 
-  describe.client 'Client', ->
+  describe 'Client', ->
 
     makeRouteTests()
     makeRouteTests true
@@ -153,7 +153,7 @@ describe 'Router: meteorhacks:flow-router', ->
 
     Package['meteorhacks:flow-router'] = FlowRouter: Router
 
-  describe.client 'Client', ->
+  describe 'Client', ->
 
     makeRouteTests()
     makeRouteTests true
@@ -177,7 +177,7 @@ describe 'Router: kadira:flow-router', ->
 
     Package['kadira:flow-router'] = FlowRouter: Router
 
-  describe.client 'Client', ->
+  describe 'Client', ->
 
     makeRouteTests()
     makeRouteTests true
