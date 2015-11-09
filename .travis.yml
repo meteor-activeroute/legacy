@@ -4,7 +4,5 @@ node_js:
   - "0.12"
 
 before_install:
-  - "curl https://install.meteor.com | /bin/sh"
-
-env:
-  - METEOR_APP_HOME=.meteor
+  - curl https://install.meteor.com | /bin/sh
+  - export PATH=$PATH:$HOME/.meteor
