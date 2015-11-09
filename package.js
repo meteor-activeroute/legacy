@@ -41,8 +41,8 @@ Package.onTest(function(api) {
   ]);
 
   api.use([
-    'mike:mocha-package@0.5.7',
-    'practicalmeteor:chai@1.9.2_3',
+    'practicalmeteor:mocha@2.1.0_5',
+    'practicalmeteor:chai@2.1.0_1',
     'zimme:active-route'
   ]);
 
