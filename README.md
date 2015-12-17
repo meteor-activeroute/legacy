@@ -2,6 +2,7 @@
 [![Code Climate Badge]][Code Climate]
 [![Travis Badge]][Travis]
 [![License Badge]][License]
+[![Gratipay Badge]][Gratipay]
 
 # Active route helpers
 
@@ -227,3 +228,5 @@ ActiveRoute.configure({
 [Regexp]: https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
 [Travis]: https://travis-ci.org/zimme/meteor-active-route
 [Travis Badge]: https://img.shields.io/travis/zimme/meteor-active-route.svg
+[Gratipay Badge]: https://img.shields.io/badge/gratipay-$-brightgreen.svg
+[Gratipay]: https://gratipay.com/meteor-active-route
