@@ -13,7 +13,7 @@ checkParams = (arg) ->
     throw new Error errorMessages.invalidRouteParamsArgument
 
 checkRouterPackages = ->
-  fr = Package['kadira:flow-router'] ? Package['meteorhacks:flow-router']
+  fr = Package['kadira:flow-router'] ? Package['meteorhacks:flow-router'] ? Package['kadira:flow-router-ssr']
   ir = Package['iron:router']
   throw new Error errorMessages.noSupportedRouter unless ir or fr
 
@@ -61,7 +61,7 @@ ActiveRoute =
   name: (routeName, routeParams = {}) ->
     checkRouterPackages()
 
-    return if Meteor.isServer
+    return if (Meteor.isServer && !Package['kadira:flow-router-ssr'])
 
     checkRouteOrPath routeName
     checkParams routeParams
