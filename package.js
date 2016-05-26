@@ -35,7 +35,6 @@ Package.onTest(function(api) {
 
   api.use([
     'check',
-    'coffeescript',
     'ecmascript',
     'reactive-dict',
     'templating',
@@ -49,9 +48,9 @@ Package.onTest(function(api) {
   ]);
 
   api.addFiles([
-    'tests/client/activeroute.coffee',
-    'tests/client/helpers.coffee'
+    'tests/client/activeroute.js',
+    'tests/client/helpers.js'
   ], 'client');
 
-  api.addFiles('tests/server/activeroute.coffee', 'server');
+  api.addFiles('tests/server/activeroute.js', 'server');
 });
