@@ -2,7 +2,7 @@ Package.describe({
   git: 'https://github.com/zimme/meteor-active-route.git',
   name: 'zimme:active-route',
   summary: 'Active route helpers',
-  version: '2.3.3-rc.1'
+  version: '2.3.3-rc.2'
 });
 
 Package.onUse(function(api) {
